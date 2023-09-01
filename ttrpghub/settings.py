@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'taggit',
     'cloudinary',
+    'django_summernote',
     'blog',
 ]
 
