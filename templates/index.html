@@ -10,9 +10,9 @@
         <div class="col-12 mt-3 left">
             <div class="row">
             {% for post in post_list %}
-                <div class="col-lg-6">
+                <div class="col-lg-4">
                     <!-- Blog post-->
-                    <div class="card mb-6">
+                    <div class="card mb-4">
                         <div class="card-body">
                             <div class="image-container">
                                 {% if "placeholder" in post.featured_image.url %}
@@ -31,7 +31,7 @@
                             <div class="small text-muted">{{ post.created_on}}</div>
                             <h2 class="card-title h4">{{ post.title }}</h2>
                             <p class="card-text">{{ post.excerpt }}</p>
-                            <a class="btn btn-primary" href="{% url 'post_detail' post.slug %}">Read more →</a>
+                            <a class="btn btn-primary" href="#">Read more →</a>
                             <hr>
                             <i class="bi bi-heart"></i>{{ post.number_of_likes }}
                         </div>
