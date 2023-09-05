@@ -1,3 +1,10 @@
-.container {
-    background-color: red;
+.image-container {
+    position: relative;
+    object-fit: cover;
+}
+
+
+.card-img-top {
+    height: 45vh;
+    width: 30vw;
 }
