@@ -11,6 +11,7 @@ class PostList(ListView):
     template_name = "index.html"
     paginate_by = 3
     posts = Post.objects.prefetch_related('tags').all()
+    tags = Tag.objects.all()
 
 class TagList(ListView):
     model = Tags
