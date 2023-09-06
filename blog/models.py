@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
 from taggit.managers import TaggableManager
+from taggit.models import Tag
 
 # Create your models here.
 
@@ -27,6 +28,9 @@ class Post(models.Model):
     
     def number_of_likes(self):
         return self.likes.count()
+
+class Tags(models.Model):
+    tags = Tag.objects.all()
 
 class Comment(models.Model):
     post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name='comments')

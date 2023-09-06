@@ -4,6 +4,13 @@
 {% block content %}
 
 <!-- Page content-->
+<!-- Tags-->
+<p>
+    {% for tag in tag_list %}
+        {{ tag.tags }},
+    {% endfor %}
+</p>
+
 <div class="container-fluid">
     <div class="row">
         <!-- Blog entries-->
@@ -22,7 +29,12 @@
                                 <img class="card-img-top" src=" {{ post.featured_image.url }}" alt="picture">
                                 {% endif %}
                                 
-                            </div>                        
+                            </div>
+                            
+                            {% for tag in post.tags.all %}
+                                <small>{{ tag }}</small>
+                            {% endfor %}
+                                                       
                             <h2 class="card-title h4">{{ post.title }}</h2>
                             <div class="image-flash">
                                 <p class="author">
