@@ -1,39 +1,98 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# _TTRPG Hub_ 
 
-Welcome,
 
-This is the Code Institute student template for Codeanywhere. If you are using Gitpod then you need [this template](https://github.com/Code-Institute-Org/gitpod-full-template) instead.  We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+![Image of welcome screen](assets/images/welcome-hangman.png)
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Codeanywhere and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **August 30th, 2023**
+---
+# Introduction
 
-## Codeanywhere Reminders
-
-To run a frontend (HTML, CSS, Javascript only) application in Codeanywhere, in the terminal, type:
-
-`python3 -m http.server`
-
-A button should appear to click: _Open Preview_ or _Open Browser_.
-
-To run a frontend (HTML, CSS, Javascript only) application in Codeanywhere with no-cache, you can use this alias for `python3 -m http.server`.
-
-`http_server`
-
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
-
-A button should appear to click: _Open Preview_ or _Open Browser_.
-
-In Codeanywhere you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
-
-To log into the Heroku toolbelt CLI:
-
-1. Log in to your Heroku account and go to _Account Settings_ in the menu under your avatar.
-2. Scroll down to the _API Key_ and click _Reveal_
-3. Copy the key
-4. In Codeanywhere, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
-
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+## Technologies used
+- [Python](https://www.python.org/) was the programming language used to create this project.
+- [VScode](https://code.visualstudio.com/) was the editor used to write my code.
 
 ---
 
-Happy coding!
+## User stories
+
+---
+
+# Design 
+
+
+## Planning
+
+### Flow Chart
+
+
+# Features
+
+
+---
+
+# Future Features
+
+---
+
+# Testing
+
+## Validator testing
+
+* Code Institutes [python linter](http://pep8ci.herokuapp.com/) was used to validate the code:
+    - Some trailing and missing whitespaces were addressed, but there were no major issues. 
+    - Somehow my fixes were not reflected in my last commit so the code was fixed an additional time to pass PEP8 standards.
+    - Fixes were also made for the ASCII art python file.
+![CI Python Linter](assets/images/run-linter-2.png)
+![CI Python Linter](assets/images/ascii-linter-2.png)
+* Lighthouse in Chrome Developer Tools was used.
+![Lighthouse](assets/images/lighthouse-hangman.png)
+
+
+---
+
+## Bugs
+
+## Solved bugs
+
+---
+
+## Unsolved bugs
+
+## Manual Testing
+
+| feature | action | expected result | tested | passed | comments |
+| --- | --- | --- | --- | --- | --- |
+
+---
+
+# Deployment
+
+* This site was deployed by completing the following steps:
+
+1. Log in to [Heroku](https://id.heroku.com) or create an account.
+2. On the main page click the button labelled New in the top right corner and from the drop-down menu select Create New App.
+3. You must enter a unique app name.
+4. Select your region.
+5. Click Create App .
+6. Navigate to the settings tab and then to Config Vars.
+7. Click Reveal Config Vars and enter port into the Key box and 8000 into the Value box and click the Add button.
+8. Next, scroll down to the Buildpack section click Add Buildpack select python and click Save Changes.
+9. Repeat step 8 to add node.js. o Note: The Buildpacks must be in the correct order. If not click and drag them to move into the correct order.
+10. Scroll to the top of the page and choose the Deploy tab.
+11. Select Github as the deployment method.
+12. Confirm you want to connect to GitHub.
+13. Search for the repository name and click the connect button.
+14. Scroll to the bottom of the deploy page and select the preferred deployment type.
+15. Click either Enable Automatic Deploys for automatic deployment when you push updates to Github.
+
+---
+# Credits
+
+## Python Libraries
+
+
+## Content
+- A huge thank you to my mentor Aleksei Konovalov for all of his help throughout this process.
+
+
+---
+
