@@ -92,6 +92,7 @@
 
 ## Content
 - A huge thank you to my mentor Aleksei Konovalov for all of his help throughout this process.
+- The method to paginate something compatible with Bootstrap 5 and the current Django was from https://ourcodeworld.com/articles/read/1757/how-to-implement-a-paginator-in-a-django-class-based-listview-compatible-with-bootstrap-5 
 
 
 ---
