@@ -1,0 +1,82 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-lg-8">
+            <!-- Post content-->
+            <article>
+                <!-- Post header-->
+                <header class="mb-4">
+                    <!-- Post title-->
+                    <h1 class="fw-bolder mb-1">{{ post.title }}</h1>
+                    <!-- Post meta content-->
+                    <div class="text-muted fst-italic mb-2">{{ post.author }} | {{ post.created_on }}</p>
+                    <!-- Post tags-->
+                    {% for tag in post.tags.all %}
+                        <small>{{ tag }}</small>
+                    {% endfor %}
+                </header>
+                <!-- Preview image figure-->
+                {% if "placeholder" in post.featured_image.url %}
+                <figure class="mb-4"><img class="img-fluid rounded" src="https://scgovlibrary.librarymarket.com/sites/default/files/2020-12/dndmobile-br-1559158957902.jpg" 
+                alt="a default blog picture with a dragon" /></figure>
+                    {% else %}
+                    <figure class="mb-4"><img class="img-fluid rounded" src=" {{ post.featured_image.url }}" alt="uploaded blog picture" /></figure>
+                    {% endif %}
+                <!-- Post content-->
+                <div class="row">
+                    <div class="col card mb-4  mt-3 left  top">
+                        <div class="card-body">
+                            <p class="card-text ">
+                                {{ post.content | safe }}
+                            </p>
+                            <div class="row">
+            
+                                <div class="col-1">
+                                    <strong class="text-secondary"><i class="far fa-heart"></i> {{ post.number_of_likes }} </strong>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            <!-- Comments section-->
+            <section class="mb-5">
+                <div class="card bg-light">
+                    <div class="card-body">
+                        <!-- Comment form-->
+                        <form class="mb-4"><textarea class="form-control" rows="3" placeholder="Join the discussion and leave a comment!"></textarea></form>
+                        {% with comments.count as total_comments %}
+                        <strong class="text-secondary"><i class="far fa-comments"></i>
+                        {{% total_comments %}}</strong>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <hr>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-8 card mb-4 mt-3">
+                        <h3>Comments:</h3>
+                        <div class="card-body">
+                            
+                            {% for comment in comments %}
+                                <div class="comments" style="padding: 10px;">
+                                    <p class="font-weight-bold">
+                                        {{ comment.name }}
+                                        <span class=" text-muted font-weight-normal">
+                                            {{ comment.created_on }}
+                                        </span> wrote:
+                                    </p>
+                                    {{ comment.body | linebreaks}}
+                                </div>
+                            {% endfor %}
+                                
+                        </div>
+                    </div>
+                </div>
+
+{% endblock content %}
