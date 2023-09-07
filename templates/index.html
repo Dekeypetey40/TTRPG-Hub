@@ -6,8 +6,8 @@
 <!-- Page content-->
 <!-- Tags-->
 <p>
-    {% for tag in tag_list %}
-        {{ tag.tags }},
+    {% for tag in tags %}
+        {{ tag }},
     {% endfor %}
 </p>
 
@@ -43,7 +43,7 @@
                             </div>
                             <p class="card-text">{{ post.excerpt }}</p>
                             <div class="small text-muted">{{ post.created_on}}</div>
-                            <a class="btn btn-primary" href="#">Read more →</a>
+                            <a class="btn btn-primary" href="{% url 'post_detail' post.slug %}">Read more →</a>
                             <hr>
                             <i class="bi bi-heart"></i>{{ post.number_of_likes }}
                         </div>
