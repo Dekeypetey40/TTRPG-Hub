@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% load i18n %}
+{% load account socialaccount %}
+
+{% block head_title %}{% trans "Sign In" %}{% endblock %}
+
+{% block content %}
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
+      <h2 class="text-center text-dark mt-5">Login Form</h2>
+      
+      <div class="card my-5">
+
+        <form class="card-body cardbody-color p-lg-5" method="POST" action="{% url 'account_login' %}">
+          {% csrf_token %}
+          {{ form.as_p }}
+          {% if redirect_field_value %}
+
+          <div class="mb-3">
+            <input type="hidden" class="form-control px-5 mt-5 w-100" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+            {% endif %}
+            <div class="text-center"><button type="submit" class="btn btn-color px-5 mt-5 w-100">{% trans 'Sign In' %}</button></div>
+          </div>
+          
+          <div id="emailHelp" class="text-center form-text mb-5 text-dark">
+            <p>
+            {% blocktrans %}
+              If you have yet to make an account on TTRPG Hub, then please 
+              <a href="{{ signup_url }}">sign up</a> here.
+            {% endblocktrans %}
+            </p>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
