@@ -50,8 +50,15 @@ INSTALLED_APPS = [
     'taggit',
     'cloudinary',
     'django_summernote',
+    'crispy_forms',
+    'crispy-bootstrap5',
     'blog',
 ]
+
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
+
+CRISPY_TEMPLATE_PACK = "bootstrap5"
+
 SITE_ID = 1
 
 LOGIN_REDIRECT_URL = '/'
