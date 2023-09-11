@@ -31,3 +31,17 @@
   a{
     text-decoration: none;
   }
+
+/* Like button */
+.btn-like {
+  color: #e81e10;
+  border: none;
+  background: transparent;
+}
+
+.btn-like:hover,
+.btn-like:active {
+  color: #e81e10;
+  background: transparent;
+  border: none;
+}
