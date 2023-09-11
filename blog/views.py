@@ -3,6 +3,7 @@ from taggit.models import Tag
 from django.views.generic import ListView, View
 from django.http import HttpResponseRedirect
 from .models import Post, Comment, Tags
+from .forms import CommentForm
 
 # Create your views here.
 class PostList(ListView):
@@ -34,6 +35,7 @@ class PostDetail(View):
             {
                 "post": post,
                 "comments": comments,
-                "liked": liked
-            }
+                "liked": liked,
+                "comment_form": CommentForm()
+            },
         )
