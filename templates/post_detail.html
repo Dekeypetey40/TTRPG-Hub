@@ -48,11 +48,22 @@
                 <div class="col card bg-light mt-3 left top">
                     <div class="card-body">
                         <!-- Comment form-->
-                        <form class="mb-4 form-control">
+                        
+                        {% if commented %}
+                            <div class="alert alert-success" role="alert">
+                                Your comment is awaiting approval...
+                            </div>
+                        {% else %}
+                        {% if user.is_authenticated %}
+
+                        <h3>Leave a comment!</h3>
+                        <form class="mb-4 form-control" method="post">
                             {{ comment_form | crispy }}
                             {% csrf_token %}
                             <button class="btn btn-primary" type="submit">Submit Comment</button>
                         </form>
+                        {% endif %}
+                        {% endif %}
                         {% with comments.count as total_comments %}
                         <strong class="text-secondary"><i class="far fa-comments"></i>
                             {{ total_comments }}</strong>
