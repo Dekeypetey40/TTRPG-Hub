@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 
+{% load crispy_forms_tags %}
 
 {% block content %}
 <div class="container mt-5">
@@ -27,7 +28,7 @@
                     {% endif %}
                 <!-- Post content-->
                 <div class="row">
-                    <div class="col card mb-4  mt-3 left  top">
+                    <div class="col card mb-4  mt-3 left top">
                         <div class="card-body">
                             <p class="card-text ">
                                 {{ post.content | safe }}
@@ -43,11 +44,15 @@
                 </div>
             </article>
             <!-- Comments section-->
-            <section class="mb-5">
-                <div class="card bg-light">
+            <div class="mb-4 row">
+                <div class="col card bg-light mt-3 left top">
                     <div class="card-body">
                         <!-- Comment form-->
-                        <form class="mb-4"><textarea class="form-control" rows="3" placeholder="Join the discussion and leave a comment!"></textarea></form>
+                        <form class="mb-4 form-control">
+                            {{ comment_form | crispy }}
+                            {% csrf_token %}
+                            <button class="btn btn-primary" type="submit">Submit Comment</button>
+                        </form>
                         {% with comments.count as total_comments %}
                         <strong class="text-secondary"><i class="far fa-comments"></i>
                             {{ total_comments }}</strong>
