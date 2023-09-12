@@ -43,6 +43,23 @@
             </div>
         </div>
     </nav>
+    <!-- Messages -->
+    <div class="container">
+        <div class="row">
+            <div class="col md-8 offset-md-2">
+                
+                {% for message in messages %}
+                    <div class="alert {{ message.tags }} alert-dismissable fade show" id="msg" role="alert">
+                        {{ message | safe}}
+                        <button class="btn-close" type="button" data-bs-dismiss="alert" aria-label="Close">
+
+                        </button>
+                    </div> 
+                {% endfor %}
+                    
+            </div>
+        </div>
+    </div>
     <!-- Page header with logo and tagline-->
     <header class="py-5 cardbody-color border-bottom mb-4">
         <div class="container">
