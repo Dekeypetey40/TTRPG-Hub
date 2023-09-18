@@ -29,10 +29,11 @@
                                 
                             </div>
                             
-                            {% for tag in post.tags.all %}
-                                <small>{{ tag }}</small>
-                            {% endfor %}
-                                                       
+                            <div class="flex-wrap d-flex">
+                                {% for tag in post.tags.all %}
+                                    <a href="{% url 'tagged' tag.slug %}" class="btn btn-primary tag-link">#{{ tag }}</a>
+                                {% endfor %}
+                            </div>
                             <h2 class="card-title h4">{{ post.title }}</h2>
                             <div class="image-flash">
                                 <p class="author">
