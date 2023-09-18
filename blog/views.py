@@ -2,7 +2,7 @@ from django.shortcuts import render, get_object_or_404, reverse
 from taggit.models import Tag
 from django.views.generic import ListView, View
 from django.http import HttpResponseRedirect
-from .models import Post, Comment, Tags
+from .models import Post, Comment
 from .forms import CommentForm
 
 # View for the homepage with blog posts
@@ -16,13 +16,12 @@ class PostList(ListView):
 
 # Ability to filter blog posts by tag
 class TagFilter(View):
-    
     def get(self, request, slug, *args, **kwargs):
         tag = get_object_or_404(Tag, slug=slug)
-        post = Post.objects.filter(tags=tag)
+        posts = Post.objects.filter(tags=tag)
         context = {
             'tag': tag,
-            'post': post,
+            'posts': posts,
         }
         return render(request, 'tag_filter.html', context)
     
