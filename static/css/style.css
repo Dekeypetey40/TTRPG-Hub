@@ -45,3 +45,7 @@
   background: transparent;
   border: none;
 }
+/* Tag button */
+.tag-link {
+  margin-right: 10px;
+}
