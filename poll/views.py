@@ -44,6 +44,10 @@ class PollView(View):
             poll=poll,
             option=option,
         )
+        poll_results = []
+        for option in poll.options.all():
+            voteCount = Vote.objects.filter(poll=poll, option=option).count()
+            poll_results.append([option.name, voteCount])
         
         return render(
             request,
@@ -51,5 +55,6 @@ class PollView(View):
             context={
                 "poll": poll,
                 "success_message": "Thanks for voting",
+                "poll_results": poll_results,
             }
         )
