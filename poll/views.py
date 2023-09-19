@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.views import View
 
-from poll.models import Poll
+from poll.models import Poll, PollOption, Vote
 # Create your views here.
 
 # Written so that if one were to make more
@@ -30,5 +30,26 @@ class PollView(View):
             template_name="poll.html",
             context={
                 "poll": poll,
+            }
+        )
+        
+    def post(self, request, poll_id):
+        requestData = request.POST
+        
+        option_id = requestData.get('option_id')
+        
+        poll = Poll.objects.get(id=poll_id)
+        option = PollOption.objects.get(id=option_id)
+        Vote.objects.create(
+            poll=poll,
+            option=option,
+        )
+        
+        return render(
+            request,
+            template_name="poll.html",
+            context={
+                "poll": poll,
+                "success_message": "Thanks for voting",
             }
         )

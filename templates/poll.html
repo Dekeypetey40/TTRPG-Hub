@@ -3,19 +3,27 @@
 {% load static %}
 
 {% block content %}
+
+
+{% if success_message %}
+  <div class="alert alert-success">{{ success_message }}</div>
+{% endif %}
+  
 <div class="container px-3">
   <h2> {{ poll.name }}</h2>
   <i>
-      <h6> {{ poll.description }} </h6>
-    </i>
+    <h6> {{ poll.description }} </h6>
+  </i>
     <hr class="my-4">
-{% comment %} Loops through all choices in the given poll and puts them into a form {% endcomment %}
-    <form>
-      {% for choice in poll.choices.all %}
+{% comment %} Loops through all options in the given poll and puts them into a form {% endcomment %}
+    <form method="post">
+      {% csrf_token %}
+      {% for option in poll.options.all %}
       <div class="form-check">
-        <input class="form-check-input" type="radio" name="choice_id" id="{{ choice.id }}">
-        <label class="form-check-label" for="{{ choice.id }}">
-          {{ choice.name }}
+        <input class="form-check-input" type="radio" name="option_id" id="{{ option.id }}"
+        value="{{ option.id }}">
+        <label class="form-check-label" for="{{ option.id }}">
+          {{ option.name }}
         </label>
       </div>
       {% endfor %}

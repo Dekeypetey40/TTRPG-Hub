@@ -13,7 +13,7 @@ class PollOption(models.Model):
 class Poll(models.Model):
     name = models.CharField(max_length=50)
     description = models.TextField()
-    choices = models.ManyToManyField(
+    options = models.ManyToManyField(
         PollOption, related_name='related_polls', blank=True)
     
     def __str__(self):
