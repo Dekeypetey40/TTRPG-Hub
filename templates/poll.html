@@ -3,21 +3,24 @@
 {% load static %}
 
 {% block content %}
-<h2> poll.name </h2>
-<i>
-    <h6> {{ poll.description }} </h6>
-  </i>
-  <hr class="my-4">
-  <form>
-    {% for choice in poll.choices.all %}
-    <div class="form-check">
-      <input class="form-check-input" type="radio" name="choice_id" id="{{ choice.id }}">
-      <label class="form-check-label" for="{{ choice.id }}">
-        {{ choice.name }}
-      </label>
-    </div>
-    {% endfor %}
+<div class="container px-3">
+  <h2> {{ poll.name }}</h2>
+  <i>
+      <h6> {{ poll.description }} </h6>
+    </i>
     <hr class="my-4">
-    <button class="btn btn-outline-success">Vote</button>
-  </form>
+{% comment %} Loops through all choices in the given poll and puts them into a form {% endcomment %}
+    <form>
+      {% for choice in poll.choices.all %}
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="choice_id" id="{{ choice.id }}">
+        <label class="form-check-label" for="{{ choice.id }}">
+          {{ choice.name }}
+        </label>
+      </div>
+      {% endfor %}
+      <hr class="my-4">
+      <button class="btn btn-outline-success mb-2">Vote</button>
+    </form>
+</div>
 {% endblock content %}
