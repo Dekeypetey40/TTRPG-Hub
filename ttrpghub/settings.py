@@ -14,6 +14,7 @@ from pathlib import Path
 import os
 import dj_database_url
 from django.contrib.messages import constants as messages
+import django_heroku
 if os.path.isfile('env.py'):
     import env
 
@@ -170,3 +171,5 @@ DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 TAGGIT_CASE_INSENSITIVE = True
+
+django_heroku.settings(locals())

@@ -12,6 +12,7 @@ dj3-cloudinary-storage==0.0.6
 Django==4.2.4
 django-allauth==0.56.0
 django-crispy-forms==2.0
+django-heroku==0.3.1
 django-summernote==0.8.20.0
 django-taggit==4.0.0
 gunicorn==21.2.0
@@ -29,3 +30,4 @@ sqlparse==0.4.4
 typing_extensions==4.7.1
 urllib3==1.26.16
 webencodings==0.5.1
+whitenoise==6.5.0
