@@ -6,4 +6,3 @@ from poll.models import PollOption, Poll, Vote
 admin.site.register(PollOption)
 admin.site.register(Poll)
 admin.site.register(Vote)
-
