@@ -9,6 +9,7 @@ from poll.models import Poll, PollOption, Vote
 # homepage and have the user select the poll
 # they want to vote on.
 
+
 class HomeView(View):
 
     def get(self, request):
@@ -21,8 +22,9 @@ class HomeView(View):
             }
         )
 
+
 class PollView(View):
-    
+
     def get(self, request, poll_id):
         poll = Poll.objects.get(id=poll_id)
         return render(
@@ -32,12 +34,12 @@ class PollView(View):
                 "poll": poll,
             }
         )
-        
+
     def post(self, request, poll_id):
         requestData = request.POST
-        
+
         option_id = requestData.get('option_id')
-        
+
         poll = Poll.objects.get(id=poll_id)
         option = PollOption.objects.get(id=option_id)
         Vote.objects.create(
@@ -48,7 +50,7 @@ class PollView(View):
         for option in poll.options.all():
             voteCount = Vote.objects.filter(poll=poll, option=option).count()
             poll_results.append([option.name, voteCount])
-        
+
         return render(
             request,
             template_name="poll.html",
