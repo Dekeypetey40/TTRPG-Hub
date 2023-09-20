@@ -7,31 +7,14 @@
 
 {% if success_message %}
   <div class="alert alert-success">{{ success_message }}</div>
-  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-<div id="piechart"></div>
-<script type="text/javascript">
-  var poll_results = {{ poll_results|safe }};
-
-  // Load google charts
-  google.charts.load('current', { 'packages': ['corechart'] });
-  google.charts.setOnLoadCallback(drawChart);
-
-  // Draw the chart and set the chart values
-  function drawChart() {
-    
-    poll_results.unshift(["Option", "Vote Count"]);
-    var data = google.visualization.arrayToDataTable(poll_results);
-
-    // Optional; add a title and set the width and height of the chart
-    var options = { 'width': 550, 'height': 400 };
-
-    // Display the chart inside the <div> element with id="piechart"
-    var chart = new google.visualization.PieChart(document.getElementById('piechart'));
-    chart.draw(data, options);
-  }
-</script>
+{% endif %}
+{% if failure_message %}
+  <div class="alert alert-warning">{{ failure_message }}</div>
 {% endif %}
   
+<div id="piechart"></div>
+
+
 <div class="container px-3">
   <h2> {{ poll.name }}</h2>
   <i>
@@ -55,3 +38,29 @@
     </form>
 </div>
 {% endblock content %}
+
+{% block extrajs %}
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+  var poll_results = {{ poll_results|safe }};
+
+  // Load google charts
+  google.charts.load('current', { 'packages': ['corechart'] });
+  google.charts.setOnLoadCallback(drawChart);
+
+  // Draw the chart and set the chart values
+  function drawChart() {
+    
+    poll_results.unshift(["Option", "Vote Count"]);
+    var data = google.visualization.arrayToDataTable(poll_results);
+
+    // Optional; add a title and set the width and height of the chart
+    var options = { 'width': 550, 'height': 400 };
+
+    // Display the chart inside the <div> element with id="piechart"
+    var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+    chart.draw(data, options);
+  }
+</script>
+{% endblock extrajs %}
+  

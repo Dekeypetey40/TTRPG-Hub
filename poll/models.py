@@ -1,5 +1,6 @@
 from django.db import models
 from django.utils import timezone
+from django.contrib.auth.models import User
 # Create your models here.
 
 
@@ -36,7 +37,11 @@ class Vote(models.Model):
                                related_name="votes",
                                null=True,
                                blank=True)
-    timestamp = models.DateTimeField(default=timezone.now())
-
+    timestamp = models.DateTimeField(auto_now_add=True)
+    user = models.ForeignKey(User,
+                             on_delete=models.SET_NULL,
+                             related_name="votes",
+                             null=True,
+                             blank=True)
     def __str__(self):
         return f"{self.poll.name} - {self.option.name}"

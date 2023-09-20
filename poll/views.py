@@ -42,21 +42,37 @@ class PollView(View):
 
         poll = Poll.objects.get(id=poll_id)
         option = PollOption.objects.get(id=option_id)
-        Vote.objects.create(
-            poll=poll,
-            option=option,
-        )
-        poll_results = []
-        for option in poll.options.all():
-            voteCount = Vote.objects.filter(poll=poll, option=option).count()
-            poll_results.append([option.name, voteCount])
+        if not Vote.objects.filter(poll=poll, user=request.user).exists():
+            Vote.objects.create(
+                poll=poll,
+                option=option,
+                user=request.user
+            )
+            poll_results = []
+            for option in poll.options.all():
+                voteCount = Vote.objects.filter(poll=poll, option=option).count()
+                poll_results.append([option.name, voteCount])
 
-        return render(
-            request,
-            template_name="poll.html",
-            context={
-                "poll": poll,
-                "success_message": "Thanks for voting",
-                "poll_results": poll_results,
-            }
-        )
+            return render(
+                request,
+                template_name="poll.html",
+                context={
+                    "poll": poll,
+                    "success_message": "Thanks for voting",
+                    "poll_results": poll_results,
+                }
+            )
+        else:
+            poll_results = []
+            for option in poll.options.all():
+                voteCount = Vote.objects.filter(poll=poll, option=option).count()
+                poll_results.append([option.name, voteCount])
+            return render(
+                request,
+                template_name="poll.html",
+                context={
+                    "poll": poll,
+                    "failure_message": "You may only vote once",
+                    "poll_results": poll_results,
+                }
+            )
