@@ -49,3 +49,13 @@
 .tag-link {
   margin-right: 10px;
 }
+
+/* Tag Background and header */
+.tag-bg {
+  background-color: #ebf2fa;
+  margin: auto;
+  width: 75%;
+}
+.tag-header {
+  font-weight: bolder;
+}
