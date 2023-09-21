@@ -15,7 +15,25 @@ TTRPG Hub is a blog website desogned to spark engagement and discussion amongst 
 ---
 
 ## User stories
-
+| Title | Number | Definition | Completed? | Label |
+|-------|--------|------------|------------|-------|
+| USER STORY: Edit and Delete Comments | [#1](https://github.com/Dekeypetey40/TTRPG-Hub/issues/1) | As a user, I want to be able to delete and edit my comments, so that update or remove my comments if I need to. | [x] | Must Have |
+| USER STORY: See full blog post | [#2](https://github.com/Dekeypetey40/TTRPG-Hub/issues/2) | As a user, I can click on a blog post title, so that view the entirety of the post. | [x] | Must Have |
+| USER STORY: View Comments | [#3](https://github.com/Dekeypetey40/TTRPG-Hub/issues/3) |As a admin or site user, I want to read comments on a blog post, so that I can see what the community thinks about the post. | [x] | Must Have |
+| USER STORY: View post likes | [#4](https://github.com/Dekeypetey40/TTRPG-Hub/issues/4) | As a admin or site user, I want to how many likes a post has, so that I can see how popular it is. | [x] | Must Have |
+| USER STORY: Moderate Blog Content | [#5](https://github.com/Dekeypetey40/TTRPG-Hub/issues/5) | As an admin, I want to be able to create, edit, update, and delete posts, so that can control the content on the site. | [x] | Must Have |
+| USER STORY: Moderate comments | [#6](https://github.com/Dekeypetey40/TTRPG-Hub/issues/6) | As an admin, I want to be able to create, edit, update, and delete comments, so that can control the content on the site. | [x] | Must Have |
+| USER STORY: Like Feature | [#7](https://github.com/Dekeypetey40/TTRPG-Hub/issues/7) | As a user, I want to be able to like posts, so that the post author knows I like their content. | [x] | Must Have |
+| USER STORY: Comment Like Feature | [#8](https://github.com/Dekeypetey40/TTRPG-Hub/issues/8) | As a user, I can like other user's comments, so that show which comments I like. | [ ] | Could Have |
+| USER STORY: Comment Feature | [#9](https://github.com/Dekeypetey40/TTRPG-Hub/issues/9) | As a user, I can comment on blog posts, so that I can interact with the community. | [x] | Must Have |
+| USER STORY: Paginated Post Content | [#10](https://github.com/Dekeypetey40/TTRPG-Hub/issues/10) | As a site user, I want to see paginated content, so that I can easily view the content I want without being overwhelmed. | [x] | Should Have |
+| USER STORY: Make an Account | [#11](https://github.com/Dekeypetey40/TTRPG-Hub/issues/11) | As a new user, I can easily make an account for the website, so that I can interact with the community. | [x] | Must Have |
+| EPIC: Home Page | [#12](https://github.com/Dekeypetey40/TTRPG-Hub/issues/12) |  As a new user, I want to see a home page that makes the site's purpose clear, so that I can quickly determine if I am interested in the site. | [x] | Must Have |
+| USER STORY: Add Tag Feature | [#13](https://github.com/Dekeypetey40/TTRPG-Hub/issues/13) | As a user, I want to be able to add tags to my posts and view other posts' tags, so that users can quickly get an idea of what a post is about. | [x] | Should Have |
+| USER STORY: About Page | [#14](https://github.com/Dekeypetey40/TTRPG-Hub/issues/14) | As a user, I can read what the blog is all about, so that I can understand the blog's purpose. | [x] | Could Have |
+| USER STORY: TTRPG Poll | [#15](https://github.com/Dekeypetey40/TTRPG-Hub/issues/15) | As a user, I can vote for which TTRPG is my favorite, so that I can interact with the community. | [x] | Should Have |
+| USER STORY: Write Drafts | [#16](https://github.com/Dekeypetey40/TTRPG-Hub/issues/16) | As an Admin, I can create draft posts, so that I can finish writing a post when I want. | [x] | Should Have |
+| USER STORY: One like per user on polls | [#17](https://github.com/Dekeypetey40/TTRPG-Hub/issues/17) | As an admin, I want to users to only be able to vote once on polls, so that my polls' results do not get skewed by individual users. | [x] | Should Have |
 ---
 
 # Design 
