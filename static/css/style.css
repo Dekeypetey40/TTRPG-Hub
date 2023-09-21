@@ -1,3 +1,9 @@
+.masthead {
+  background: url("/static/images/rpg-hero.jpg");
+  background-size: cover;
+  color: #fff;
+}
+
 .image-container {
     position: relative;
     object-fit: cover;
