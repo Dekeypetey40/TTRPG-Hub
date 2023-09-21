@@ -9,8 +9,8 @@ TTRPG Hub is a blog website desogned to spark engagement and discussion amongst 
 ## Technologies used
 - [Python](https://www.python.org/) was one of the main programming languages used to create this project.
 - [VScode](https://code.visualstudio.com/) was the editor used to write my code.
-- [Javascript] (https://www.javascript.com/) was used to make the website more interactive.
-- [HTML] (https://en.wikipedia.org/wiki/HTML) and [CSS] (https://en.wikipedia.org/wiki/CSS) was used to present content to the user on the front end.
+- [Javascript](https://www.javascript.com/) was used to make the website more interactive.
+- [HTML](https://en.wikipedia.org/wiki/HTML) and [CSS](https://en.wikipedia.org/wiki/CSS) was used to present content to the user on the front end.
 
 ---
 
