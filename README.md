@@ -88,6 +88,20 @@
 # Credits
 
 ## Python Libraries
+- Cloudinary
+    - Storage for static files
+- AllAuth
+    - This librared allowed for a seamless integration for user accounts and their validation on the site.
+- crispy-bootstrap5 and crispy-forms
+    - This allowed for easy to use forms that are compatible with bootstrap 5 templates
+- Django
+    - This framework made it fast and relatively easy to make a full-stack website.
+- Django-taggit
+    - This library allowed for easy implementation of tags for my blog posts. Furthermore, it allows users to filter posts by their tag. 
+- Bootstrap 5 
+    - A great css framework to easily style web pages. There is lots of free templates available and they are easy to modify to my needs. 
+- Django-heroku
+    - This library fixed a bug I had where my custom css would not work properly on Heroku. 
 
 
 ## Content
@@ -95,7 +109,7 @@
 - The method to paginate something compatible with Bootstrap 5 and the current Django was from https://ourcodeworld.com/articles/read/1757/how-to-implement-a-paginator-in-a-django-class-based-listview-compatible-with-bootstrap-5 
 - My knowledge on how to use django-taggit was gained through the [BugBytes] (https://www.youtube.com/watch?v=213swbH8j_o&ab_channel=BugBytes) Youtube channel.
 - Flaticon was taken from [Freepik] (https://www.flaticon.com/authors/freepik)
-- My login/logout forms were taken from dvrrajashekhar on [freefrontend] (https://freefrontend.com/bootstrap-login-forms/#gsc.tab=0)
+- My login/logout form templates were taken from dvrrajashekhar on [freefrontend] (https://freefrontend.com/bootstrap-login-forms/#gsc.tab=0)
 
 
 ---
