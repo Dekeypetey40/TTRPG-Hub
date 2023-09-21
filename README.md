@@ -1,14 +1,16 @@
 # _TTRPG Hub_ 
 
 
-![Image of welcome screen](assets/images/welcome-hangman.png)
+![Image of welcome screen](static/images/ttrpg-home-page.png)
 
 ---
 # Introduction
-
+TTRPG Hub is a blog website desogned to spark engagement and discussion amongst the Tabletop Roleplaying Game (TTRPG) community. Users can comment and like blog posts, but also vote on polls. The link to the live website is [here] (https://ttrpg-hub-84db70afcadd.herokuapp.com/). 
 ## Technologies used
-- [Python](https://www.python.org/) was the programming language used to create this project.
+- [Python](https://www.python.org/) was one of the main programming languages used to create this project.
 - [VScode](https://code.visualstudio.com/) was the editor used to write my code.
+- [Javascript] (https://www.javascript.com/) was used to make the website more interactive.
+- [HTML] (https://en.wikipedia.org/wiki/HTML) and [CSS] (https://en.wikipedia.org/wiki/CSS) was used to present content to the user on the front end.
 
 ---
 
