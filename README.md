@@ -110,7 +110,7 @@ TTRPG Hub is a blog website desogned to spark engagement and discussion amongst 
 - A huge thank you to my mentor Aleksei Konovalov for all of his help throughout this process.
 - The method to paginate something compatible with Bootstrap 5 and the current Django was from https://ourcodeworld.com/articles/read/1757/how-to-implement-a-paginator-in-a-django-class-based-listview-compatible-with-bootstrap-5 
 - My knowledge on how to use django-taggit was gained through the [BugBytes] (https://www.youtube.com/watch?v=213swbH8j_o&ab_channel=BugBytes) Youtube channel.
-- Flaticon was taken from [Freepik] (https://www.flaticon.com/authors/freepik)
+- Flaticon and hero image were taken from [Freepik] (https://www.freepik.com/)
 - My login/logout form templates were taken from dvrrajashekhar on [freefrontend] (https://freefrontend.com/bootstrap-login-forms/#gsc.tab=0)
 
 
