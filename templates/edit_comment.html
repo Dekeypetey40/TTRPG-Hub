@@ -1,9 +1,6 @@
 {% extends "base.html" %} {% load static %} {% block content %}
 
 {% if request.user == comment.user %}
-{% if updated  %}
-  <h3>Successfully Edited</h3>
-{% else %}
 <div class="container">
   <div class="row">
     <div class="col-md-6 offset-md-3">
@@ -11,8 +8,8 @@
         <form class="card-body cardbody-color p-lg-5" method="POST">
           <h3 class="text-center text-dark mt-1">Edit Comment</h3>
           {% csrf_token %}
-          <div class="col-8">{{ form.as_p }}</div>
-          <div class="mb-3">
+          <div class="col-8 d-flex justify-content-center">{{ form.as_p }}</div>
+          <div class="mb-3 d-flex justify-content-center">
             <input type="submit" class="btn btn-color" aria-label="Edit comment" value="Update" />
           </div>
         </form>
@@ -21,7 +18,12 @@
   </div>
 </div>
 {% else %}
-<h2>You may not modify other users' comments! Either login and modify your post or click on Home in the navbar.</h2>
-{% endif %}
+<div class="card my-5">
+  <div class="card.body cardbody-color p-lg-5 d-flex justify-content-center">
+    <h2>You may not modify other users' comments! Either login and modify your post, or
+      <a href="{% url 'home' %}">go Home</a>.</h2>
+  </div>
+</div>
+
 {% endif %}
 {% endblock %}
