@@ -38,6 +38,7 @@ TTRPG Hub is a blog website desogned to spark engagement and discussion amongst 
 | USER STORY: TTRPG Poll | [#15](https://github.com/Dekeypetey40/TTRPG-Hub/issues/15) | As a user, I can vote for which TTRPG is my favorite, so that I can interact with the community. | [x] | Should Have |
 | USER STORY: Write Drafts | [#16](https://github.com/Dekeypetey40/TTRPG-Hub/issues/16) | As an Admin, I can create draft posts, so that I can finish writing a post when I want. | [x] | Should Have |
 | USER STORY: One like per user on polls | [#17](https://github.com/Dekeypetey40/TTRPG-Hub/issues/17) | As an admin, I want to users to only be able to vote once on polls, so that my polls' results do not get skewed by individual users. | [x] | Should Have |
+| USER STORY: Add CRUD functionality for user comments | [#18](https://github.com/Dekeypetey40/TTRPG-Hub/issues/18) | As a user, I want to be able to edit or delete my comments, so that I can control my own comments. | [x] | Should Have |
 ---
 
 # Design
@@ -45,6 +46,7 @@ TTRPG Hub is a blog website desogned to spark engagement and discussion amongst 
 ## Agile Planning
 
 An agile approach was used to plan and make this project. I made use of GitHub's issues and projects to manage my progress in the project, as well as user stories. A link to my kanban board can be found [here](https://github.com/users/Dekeypetey40/projects/3/views/1).
+![Kanban board](static/images/kanban-board.png)
 
 ### Flow Chart
 
