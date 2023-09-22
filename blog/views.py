@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404, reverse
 from taggit.models import Tag
 from django.views.generic import ListView, View
+from django.views.generic.edit import UpdateView, DeleteView
 from django.http import HttpResponseRedirect
 from django.contrib import messages
 from .models import Post, Comment
@@ -96,3 +97,6 @@ class PostLike(View):
             post.likes.add(request.user)
 
         return HttpResponseRedirect(reverse('post_detail', args=[slug]))
+
+
+class EditComment:(UpdateView):
