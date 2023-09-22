@@ -1,6 +1,6 @@
 {% extends "base.html" %} {% load static %} {% block content %}
 
-
+{% if request.user == comment.user %}
 {% if updated  %}
   <h3>Successfully Edited</h3>
 {% else %}
@@ -20,5 +20,8 @@
     </div>
   </div>
 </div>
+{% else %}
+<h2>You may not modify other users' comments! Either login and modify your post or click on Home in the navbar.</h2>
+{% endif %}
 {% endif %}
 {% endblock %}
