@@ -1,0 +1,22 @@
+{% extends "base.html" %} {% load static %} {% block content %}
+{% if request.user == comment.user %}
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
+      <div class="card my-5">
+        <form class="card-body cardbody-color p-lg-5" method="POST">
+        {% csrf_token %}
+          <h3 class="text-center text-dark mt-1">Delete Comment</h3>
+          <p>Are you sure you want to delete your comment?</p>
+          <div class="mb-3">
+            <input type="submit" class="btn btn-color" aria-label="Delete comment" value="Confirm" />
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+{% else %}
+<h2>You may not modify other users' comments! Either login and modify your post or click on Home in the navbar.</h1>
+{% endif %}
+{% endblock %}

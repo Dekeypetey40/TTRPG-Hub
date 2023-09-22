@@ -5,6 +5,7 @@ from django.views.generic.edit import UpdateView, DeleteView
 from django.http import HttpResponseRedirect
 from django.contrib import messages
 from .models import Post, Comment
+from django import http
 from .forms import CommentForm
 
 # View for the homepage with blog posts
@@ -37,7 +38,7 @@ class PostDetail(View):
     def get(self, request, slug, *args, **kwargs):
         queryset = Post.objects.filter(status=1)
         post = get_object_or_404(queryset, slug=slug)
-        comments = post.comments.filter(approved=True).order_by('created_on')
+        comments = post.comments.all().order_by('-created_on')
         liked = False
         if post.likes.filter(id=self.request.user.id).exists():
             liked = True
@@ -99,4 +100,29 @@ class PostLike(View):
         return HttpResponseRedirect(reverse('post_detail', args=[slug]))
 
 
-class EditComment:(UpdateView):
+class EditComment(UpdateView):
+    """Edit user comment on the front end"""
+    model = Comment
+    form_class = CommentForm
+    template_name = "edit_comment.html"
+    
+    def get_edit(self):
+        """If user succeeds in editing their comment"""
+        post = self.object.post
+        post_slug = post.slug
+        messages.success(self.request, "Your comment has been edited!")
+        return reverse('post_detail', kwargs={"slug": post_slug})
+
+
+class DeleteComment(DeleteView):
+    """View for user to delete comment in front end"""
+    model = Comment
+    template_name = "delete_comment.html"
+    def delete(self, request, *args, **kwargs):
+        # the Post object
+        self.object = self.get_object()
+        if self.object.User == request.user:
+            success_url = "/"
+            return http.HttpResponseRedirect(success_url)
+        else:
+            return http.HttpResponseForbidden("Cannot delete other's posts")

@@ -51,6 +51,14 @@
   background: transparent;
   border: none;
 }
+/* Edit and Delete comment buttons*/
+.update-btn {
+  color: #fff;
+}
+a {
+  text-decoration: none;
+  color: #fff;
+}
 /* Tag button */
 .tag-link {
   margin-right: 10px;

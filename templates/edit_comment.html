@@ -1,0 +1,24 @@
+{% extends "base.html" %} {% load static %} {% block content %}
+
+
+{% if updated  %}
+  <h3>Successfully Edited</h3>
+{% else %}
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
+      <div class="card my-5">
+        <form class="card-body cardbody-color p-lg-5" method="POST">
+          <h3 class="text-center text-dark mt-1">Edit Comment</h3>
+          {% csrf_token %}
+          <div class="col-8">{{ form.as_p }}</div>
+          <div class="mb-3">
+            <input type="submit" class="btn btn-color" aria-label="Edit comment" value="Update" />
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+{% endif %}
+{% endblock %}

@@ -65,6 +65,32 @@
             <div class="mb-4 row">
                 <div class="col card bg-light mt-3 left top">
                     <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-12 card mb-4 mt-3">
+                                <h3>Comments:</h3>
+                                <div class="card-body">
+                                    
+                                    {% for comment in comments %}
+                                    <div class="comments" style="padding: 10px;">
+                                        <p class="font-weight-bold">
+                                            {{ comment.user }}
+                                            <span class=" text-muted font-weight-normal">
+                                                {{ comment.created_on }}
+                                            </span> wrote:
+                                            
+                                        </p>
+                                        {{ comment.body | linebreaks}}
+                                    </div>
+                                    <!-- Edit/Delete Comment icons -->
+                                    {% if request.user == comment.user %}
+                                    <button type="button" class="btn btn-primary update-btn"><a href="{% url 'edit_comment' comment.id %}">Edit</a></button>
+                                    <button type="button" class="btn btn-danger update-btn"><a href="{% url 'delete_comment' comment.id %}">Delete</a></button>
+                                    {% endif %}
+                                    {% endfor %}
+                                        
+                                </div>
+                            </div>
+                        </div>
                         <!-- Comment form-->
                         
                         {% if commented %}
@@ -93,25 +119,6 @@
                         <hr>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-md-8 card mb-4 mt-3">
-                        <h3>Comments:</h3>
-                        <div class="card-body">
-                            
-                            {% for comment in comments %}
-                                <div class="comments" style="padding: 10px;">
-                                    <p class="font-weight-bold">
-                                        {{ comment.name }}
-                                        <span class=" text-muted font-weight-normal">
-                                            {{ comment.created_on }}
-                                        </span> wrote:
-                                    </p>
-                                    {{ comment.body | linebreaks}}
-                                </div>
-                            {% endfor %}
-                                
-                        </div>
-                    </div>
-                </div>
+                
 
 {% endblock content %}
