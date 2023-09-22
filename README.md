@@ -6,8 +6,10 @@
 
 # Introduction
 
-TTRPG Hub is a blog website desogned to spark engagement and discussion amongst the Tabletop Roleplaying Game (TTRPG) community. Users can comment and like blog posts, but also vote on polls. The link to the live website is [here] (https://ttrpg-hub-84db70afcadd.herokuapp.com/). 
+TTRPG Hub is a blog website desogned to spark engagement and discussion amongst the Tabletop Roleplaying Game (TTRPG) community. Users can comment and like blog posts, but also vote on polls. The link to the live website is [here](https://ttrpg-hub-84db70afcadd.herokuapp.com/).
+
 ## Technologies used
+
 - [Python](https://www.python.org/) was one of the main programming languages used to create this project.
 - [VScode](https://code.visualstudio.com/) was the editor used to write my code.
 - [Javascript](https://www.javascript.com/) was used to make the website more interactive.
@@ -40,7 +42,9 @@ TTRPG Hub is a blog website desogned to spark engagement and discussion amongst 
 
 # Design
 
-## Planning
+## Agile Planning
+
+An agile approach was used to plan and make this project. I made use of GitHub's issues and projects to manage my progress in the project, as well as user stories. A link to my kanban board can be found [here](https://github.com/users/Dekeypetey40/projects/3/views/1).
 
 ### Flow Chart
 
