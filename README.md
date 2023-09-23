@@ -73,6 +73,11 @@ Wireframe of a blog post
 ## Navbar
 
 - The bootstrap template had a responsive navbar that turns into a burger menu on smaller screens.
+- When you have not logged in it shows register and login options and a logout option when logged in.  
+![Navbar logged in](static/images/navbar-logged-in.png)
+![Navbar logged out](static/images/navbar-logged-out.png)
+![Navbar small screen](static/images/navbar-small-screen.png)
+![Navbar extended menu](static/images/navbar-menu-extended.png)
 
 ---
 
