@@ -73,11 +73,38 @@ Wireframe of a blog post
 ## Navbar
 
 - The bootstrap template had a responsive navbar that turns into a burger menu on smaller screens.
-- When you have not logged in it shows register and login options and a logout option when logged in.  
+- When you have not logged in it shows register and login options and a logout option when logged in.
+- The link that is active is lighter so the user knows where on the webpage they are.
 ![Navbar logged in](static/images/navbar-logged-in.png)
 ![Navbar logged out](static/images/navbar-logged-out.png)
 ![Navbar small screen](static/images/navbar-small-screen.png)
 ![Navbar extended menu](static/images/navbar-menu-extended.png)
+
+## Homepage
+
+- The homepage is simple and paginated.
+- It shows three blog posts at a time and immediately lets the user know what the purpose of the site is.
+- The blue tag and read more buttons invite the reader to click them.
+  - The read more button lets you read the whole blog post.
+  - The tag buttons filters blog posts by tag.
+- You can see how many likes each blog post has.
+![Image of welcome screen](static/images/ttrpg-home-page.png)
+
+## Reading a blog post
+
+- Here you can see what a blog post looks like when you click read more.
+- At the bottom, you can leave a comment, like the post, and read others' comments.
+![Blog post](static/images/whole-post-title.png)
+![Blog post text](static/images/whole-post-text.png)
+
+## Polls
+
+- Here you can look at the list of polls that you can vote on.
+- One can only vote once on each poll.
+- Once you vote you get to see a piechart with the results of the poll.
+![List of polls](static/images/list-of-polls.png)
+![Poll Results](static/images/poll-voted.png)
+![Multiple Vote Attempts](static/images/poll-voted-again.png)
 
 ---
 
