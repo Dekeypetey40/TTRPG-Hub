@@ -14,8 +14,16 @@ TTRPG Hub is a blog website desogned to spark engagement and discussion amongst 
 - [VScode](https://code.visualstudio.com/) was the editor used to write my code.
 - [Javascript](https://www.javascript.com/) was used to make the website more interactive.
 - [HTML](https://en.wikipedia.org/wiki/HTML) and [CSS](https://en.wikipedia.org/wiki/CSS) was used to present content to the user on the front end.
+- [ChatGPT](https://chat.openai.com/) was used to write the blog posts and come up with the titles.
 
 ---
+
+# Design
+
+## Agile Planning
+
+An agile approach was used to plan and make this project. I made use of GitHub's issues and projects to manage my progress in the project, as well as user stories. A link to my kanban board can be found [here](https://github.com/users/Dekeypetey40/projects/3/views/1).
+![Kanban board](static/images/kanban-board.png)
 
 ## User stories
 
@@ -41,16 +49,30 @@ TTRPG Hub is a blog website desogned to spark engagement and discussion amongst 
 | USER STORY: Add CRUD functionality for user comments | [#18](https://github.com/Dekeypetey40/TTRPG-Hub/issues/18) | As a user, I want to be able to edit or delete my comments, so that I can control my own comments. | [x] | Should Have |
 ---
 
-# Design
+## Scope
 
-## Agile Planning
+The goal of this project was to make a functioning blog the tabletop roleplaying community can engage with topics pertinent to the community. The baseline for this project was to have full CRUD (Create, Read, Update, and Delete) functionality. One can see this relfected in the user stories and their labels as must have, should have, and could have. It was decided that, at a bare minimum, the blog would have its home page with all of the posts and one would be able to click on each post and leave comments. Then I was trying to decide between having an about page, a polls page, or both. Due to time constraints I decided to implement the polls page only as it would provide more opportunity for users to engage with the community.
 
-An agile approach was used to plan and make this project. I made use of GitHub's issues and projects to manage my progress in the project, as well as user stories. A link to my kanban board can be found [here](https://github.com/users/Dekeypetey40/projects/3/views/1).
-![Kanban board](static/images/kanban-board.png)
+## Color
 
-### Flow Chart
+I decided to stick with a basic color scheme. I used black for the navbar and footer and left the body of my pages white. The buttons found throughout the site were simply different shades of blue. I decided most of the color would come from the images on the blog posts, which could really be any color. This is why I stuck with a simple color scheme otherwise as to not make the site feel too busy or chaotic.
+
+## Flow Chart and Wireframes
+
+Wireframe of the homepage
+![Homepage](static/images/homepage-wireframe.png)
+Wireframe of a blog post
+![Blogpost](static/images/blogpost-wireframe.png)
+
+## Database Models
+
+![Database Models](static/images/db-models.png)
 
 # Features
+
+## Navbar
+
+- The bootstrap template had a responsive navbar that turns into a burger menu on smaller screens.
 
 ---
 
