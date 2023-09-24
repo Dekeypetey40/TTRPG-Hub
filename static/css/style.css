@@ -33,10 +33,7 @@
   .cardbody-color{
     background-color: #ebf2fa;
   }
-  
-  a{
-    text-decoration: none;
-  }
+
 
 /* Like button */
 .btn-like {
@@ -71,4 +68,7 @@ a {
 }
 .tag-header {
   font-weight: bolder;
+}
+.text-underline-hover:hover {
+  text-decoration: underline;
 }
