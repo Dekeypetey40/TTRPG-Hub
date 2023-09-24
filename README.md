@@ -106,6 +106,17 @@ Wireframe of a blog post
 ![Poll Results](static/images/poll-voted.png)
 ![Multiple Vote Attempts](static/images/poll-voted-again.png)
 
+## Account creation and logging in and out
+
+- There are messages letting the user know if they have successfully signed in or out.
+- If a user wants to logout the site asks them if they are sure. 
+- Username and password fields are required and prompt the user if they input invalid data. 
+![Invalid Username](static/images/invalid-username.png)
+![Password Required](static/images/password-required.png)
+![Login](static/images/login-form.png)
+![List of polls](static/images/logout-prompt.png)
+![List of polls](static/images/navbar-logged-in.png)
+![List of polls](static/images/navbar-logged-out.png)
 ---
 
 # Future Features
