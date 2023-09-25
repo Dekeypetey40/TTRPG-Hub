@@ -106,17 +106,23 @@ class EditComment(UpdateView):
     model = Comment
     form_class = CommentForm
     template_name = "edit_comment.html"
-    success_url = "/"
+    
+    def get_success_url_edit(self):
+        post = self.object.post
+        post_slug = post.slug
+        messages.success(self.request, 'You have successfully edited your comment!')
+        return reverse('post_detail', kwargs = {'slug':post_slug})
+        
 
 
 class DeleteComment(DeleteView):
     """View for user to delete comment in front end"""
     model = Comment
     template_name = "delete_comment.html"
-    success_url = "/"
+    
 
-    def delete(self, request, *args, **kwargs):
-        # the Post object
-        self.object = self.get_object()
-        success_url = "/"
-        return http.HttpResponseRedirect(success_url)
+    def get_success_url_edit(self):
+        post = self.object.post
+        post_slug = post.slug
+        messages.success(self.request, 'You have successfully deleted your comment!')
+        return reverse('post_detail', kwargs = {'slug':post_slug})
