@@ -1,14 +1,20 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block title %}
-    500 - Cannot fufill request due to an unexpected error
+    505 Error
 {% endblock title %}
 
 {% block content %}
-<div class="d-flex align-items-center justify-content.center vh-70" >
-    <h1 class="fw-bold">Error 500: Cannot fufill request due to an unexpected error.</h1>
-    <div class="text-center">
-        <h2>Go back  <button type="submit" class="btn btn-color px-5 mt-5 w-100">
-        <a href="{% url 'home' %}">Home</a></button></h2></div>
+<div class="container">
+    <div class="row">
+      <div class="col-md-6 offset-md-3">
+        <div class="card my-5">
+            <div class="card-body cardbody-color p-lg-5">
+                <h2 class="text-center text-dark mt-5">We had an unexpected error! We would love to help you find your way back.</h2>
+                <a class="btn btn-color px-5 mt-5 w-100 text-white" href="{% url 'home' %}">Go Home</a>
+            </div>
+        </div>
+      </div>
+    </div>
 </div>
 {% endblock content %}
