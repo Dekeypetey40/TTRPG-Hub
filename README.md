@@ -151,7 +151,7 @@ Wireframe of a blog post
 
 # Testing
 
-All testing and validation information can be found [here](#).
+All testing and validation information can be found [here](TESTING.md).
 ---
 
 # Deployment
