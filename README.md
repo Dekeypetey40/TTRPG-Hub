@@ -97,6 +97,12 @@ Wireframe of a blog post
 ![Blog post](static/images/whole-post-title.png)
 ![Blog post text](static/images/whole-post-text.png)
 
+## Tags
+
+- You can see tags on each blog post, which give the user additional information as to what the post is about.
+- Users can click on the tags and get a filtered list of blog posts containing that tag.
+![Tags](static/images/tag-filter.png)
+
 ## Polls
 
 - Here you can look at the list of polls that you can vote on.
