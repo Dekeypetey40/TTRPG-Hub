@@ -2,6 +2,7 @@ from django.shortcuts import render, get_object_or_404, reverse
 from taggit.models import Tag
 from django.views.generic import ListView, View
 from django.views.generic.edit import UpdateView, DeleteView
+from django.contrib.auth.models import User
 from django.http import HttpResponseRedirect
 from django.contrib import messages
 from .models import Post, Comment
@@ -105,24 +106,17 @@ class EditComment(UpdateView):
     model = Comment
     form_class = CommentForm
     template_name = "edit_comment.html"
-    
-    def get_edit(self):
-        """If user succeeds in editing their comment"""
-        post = self.object.post
-        post_slug = post.slug
-        messages.success(self.request, "Your comment has been edited!")
-        return reverse('post_detail', kwargs={"slug": post_slug})
+    success_url = "/"
 
 
 class DeleteComment(DeleteView):
     """View for user to delete comment in front end"""
     model = Comment
     template_name = "delete_comment.html"
+    success_url = "/"
     def delete(self, request, *args, **kwargs):
         # the Post object
         self.object = self.get_object()
-        if self.object.User == request.user:
-            success_url = "/"
-            return http.HttpResponseRedirect(success_url)
-        else:
-            return http.HttpResponseForbidden("Cannot delete other's posts")
+        
+        success_url = "/"
+        return http.HttpResponseRedirect(success_url)
