@@ -28,15 +28,17 @@ All python code written by me passes PEP8 standards using the [CI Python Linter]
 
 ### HTML W3C Validator
 
+All HTML code passed through the [W3C HTML validator](https://validator.w3.org/#validate_by_uri).
+![HTML validation](static/images/html-validation.png)
+
 ### Jigsaw CSS Validator
 
-All custom CSS code is Valid
-![CSS Valid](/documentation/readme-img/css-valid.webp)
+All css code passes validation
+![CSS Validation](/static/images/css-validation.png)
 
 ### Lighthouse Validation
 
-Lighthouse marked this site with a 90 on Performance, 95 on Accessibility and 100 on Best Practices
-![Lighthouse]()
+![Lighthouse](static/images/lighthouse-validation.png)
 
 ## Bugs
 
