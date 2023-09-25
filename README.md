@@ -117,6 +117,21 @@ Wireframe of a blog post
 ![List of polls](static/images/logout-prompt.png)
 ![List of polls](static/images/navbar-logged-in.png)
 ![List of polls](static/images/navbar-logged-out.png)
+
+## Comment CRUD Functionality for Users
+
+- Comments must be approved by an admin. 
+- Users have CRUD functionality on the front end.
+- If you are the user who made the comment the Edit and Delete buttons appear allowing you to modify the comment.
+- If you are not the user who made the comment and try to access the edit or delete urls you will be prevented from updating that comment.
+
+![comment approval](static/images/comment-awaiting-approval.png)
+![comment](static/images/crud-comments-user.png)
+![comment edit](static/images/edit-comment.png)
+![comment](static/images/edited-comment.png)
+![comment](static/images/confirm-delete.png)
+![comment](static/images/defensive-programming.png)
+
 ---
 
 # Future Features
