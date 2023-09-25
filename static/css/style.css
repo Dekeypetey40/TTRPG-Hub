@@ -71,3 +71,8 @@ a {
 .text-underline-hover:hover {
   text-decoration: underline;
 }
+/* Pie Chart */
+.chart {
+  width: 100%; 
+  min-height: 450px;
+}
