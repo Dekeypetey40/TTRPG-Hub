@@ -8,24 +8,24 @@
 | 2           | Click on Sign Up | User is logged in and receives a message | Y |          |
 | 3           | Enter valid email | Field will only accept email address format | Y |          |
 | 4           | Enter valid username | Username field will only accept characters + unique username | Y |          |
-| 6  #        | Enter valid password | Field will only accept secure passwords | Y |          |
-| 7          | Enter valid password confirmation | Field will only accept the same password from the previous field | Y |          |
-| 11          | Click the sign in link| Takes user to the sign in page | Y |          |
+| 5         | Enter valid password | Field will only accept secure passwords | Y |          |
+| 6          | Enter valid password confirmation | Field will only accept the same password from the previous field | Y |          |
+| 7          | Click the sign in link| Takes user to the sign in page | Y |          |
 | Log In      |                        |                  |      |             |
 | 1           | Click on Login button in the navbar | Brought to login page | Y |          |
-| 3           | Click on the SignUp link in the form | Redirected to the sign up page | Y |          |
-| 4           | Enter valid username | Field will only accept username format | Y |          |
-| 5           | Enter valid password | Field will only accept correct passwords | Y |          |
-| 6           | Click on the Sign In button | Takes user to the index page abd receives confirmation message | Y |          |
-| 8           | Click "Logout" in the navbar | Takes user to log out page to confirm logout | Y |          |
-| 9           | Click "Logout" button on the page | Redirects user to index page and receive confirmation message | Y |          |
+| 2           | Click on the SignUp link in the form | Redirected to the sign up page | Y |          |
+| 3           | Enter valid username | Field will only accept username format | Y |          |
+| 4           | Enter valid password | Field will only accept correct passwords | Y |          |
+| 5           | Click on the Sign In button | Takes user to the index page abd receives confirmation message | Y |          |
+| 6           | Click "Logout" in the navbar | Takes user to log out page to confirm logout | Y |          |
+| 7           | Click "Logout" button on the page | Redirects user to index page and receive confirmation message | Y |          |
 | Navbar     |                        |                  |      |             |
 | 1          | Click "Home" in the navbar | Brings user to Home page | Y |          |
 | 2          | Click "Polls" in the navbar | Brings user to polls page | Y |          |
 | 3          | Click "Logout" in the navbar | Brings user to loggout page | Y |          |
 | 4          | Click "Register" in the navbar | Brings user to sign up page | Y |          |
 | 5          | Click "log in" in the navbar | Takes user to log in page | Y |          |
-| 5          | Click the logo on the right in the navbar | Takes user to home page | Y |          |
+| 6          | Click the logo on the right in the navbar | Takes user to home page | Y |          |
 | Home Page  |                        |                  |      |             |
 | 1        | Click on a tag button | User redirected to a page with posts only with that tag | Y |          |
 | 2      | Click on read more button | Redirects user to the post assigned to the read more button | Y |          |
