@@ -1,5 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import render, reverse, redirect
 from django.views import View
+from django.contrib import messages
 
 from poll.models import Poll, PollOption, Vote
 # Create your views here.
@@ -36,43 +37,48 @@ class PollView(View):
         )
 
     def post(self, request, poll_id):
-        requestData = request.POST
-
-        option_id = requestData.get('option_id')
-
         poll = Poll.objects.get(id=poll_id)
-        option = PollOption.objects.get(id=option_id)
-        if not Vote.objects.filter(poll=poll, user=request.user).exists():
-            Vote.objects.create(
-                poll=poll,
-                option=option,
-                user=request.user
-            )
-            poll_results = []
-            for option in poll.options.all():
-                voteCount = Vote.objects.filter(poll=poll, option=option).count()
-                poll_results.append([option.name, voteCount])
+        if request.user.is_authenticated:
+            
+            requestData = request.POST
 
-            return render(
-                request,
-                template_name="poll.html",
-                context={
-                    "poll": poll,
-                    "success_message": "Thanks for voting",
-                    "poll_results": poll_results,
-                }
-            )
+            option_id = requestData.get('option_id')
+
+            option = PollOption.objects.get(id=option_id)
+            if not Vote.objects.filter(poll=poll, user=request.user).exists():
+                Vote.objects.create(
+                    poll=poll,
+                    option=option,
+                    user=request.user
+                )
+                poll_results = []
+                for option in poll.options.all():
+                    voteCount = Vote.objects.filter(poll=poll, option=option).count()
+                    poll_results.append([option.name, voteCount])
+
+                return render(
+                    request,
+                    template_name="poll.html",
+                    context={
+                        "poll": poll,
+                        "success_message": "Thanks for voting",
+                        "poll_results": poll_results,
+                    }
+                )
+            else:
+                poll_results = []
+                for option in poll.options.all():
+                    voteCount = Vote.objects.filter(poll=poll, option=option).count()
+                    poll_results.append([option.name, voteCount])
+                return render(
+                    request,
+                    template_name="poll.html",
+                    context={
+                        "poll": poll,
+                        "failure_message": "You may only vote once",
+                        "poll_results": poll_results,
+                    }
+                )
         else:
-            poll_results = []
-            for option in poll.options.all():
-                voteCount = Vote.objects.filter(poll=poll, option=option).count()
-                poll_results.append([option.name, voteCount])
-            return render(
-                request,
-                template_name="poll.html",
-                context={
-                    "poll": poll,
-                    "failure_message": "You may only vote once",
-                    "poll_results": poll_results,
-                }
-            )
+            messages.warning(self.request, "You must be logged in to vote")
+            return redirect(reverse('poll:poll', kwargs={'poll_id':poll.id}))
