@@ -22,11 +22,11 @@
                         <div class="card-body">
                             <div class="image-container">
                                 {% if "placeholder" in post.featured_image.url %}
-                                <img class="card-img-top" 
+                                <img class="card-img-top object-fit-cover" 
                                     src="https://scgovlibrary.librarymarket.com/sites/default/files/2020-12/dndmobile-br-1559158957902.jpg" 
                                     alt="a default blog picture with a dragon">
                                 {% else %}
-                                <img class="card-img-top" src=" {{ post.featured_image.url }}" alt="picture">
+                                <img class="card-img-top object-fit-cover" src=" {{ post.featured_image.url }}" alt="picture">
                                 {% endif %}
                                 
                             </div>

@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+    404 - Page not found
+{% endblock title %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+      <div class="col-md-6 offset-md-3">
+        <div class="card my-5">
+            <div class="card-body cardbody-color p-lg-5">
+                <h2 class="text-center text-dark mt-5">Error 404: This page cannot be found.</h2>
+                <button type="submit" class="btn btn-color px-5 mt-5 w-100">
+                    <a href="{% url 'home' %}">Home</a></button>
+            </div>
+        </div>
+      </div>
+    </div>
+</div>
+{% endblock content %}

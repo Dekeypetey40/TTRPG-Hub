@@ -16,6 +16,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from .views import handler404, handler500
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -24,3 +25,6 @@ urlpatterns = [
     path('poll/', include('poll.urls'), name='poll-urls'),
     path('accounts/', include('allauth.urls')),
 ]
+
+handler404 = 'ttrpghub.views.handler404'
+handler500 = handler500

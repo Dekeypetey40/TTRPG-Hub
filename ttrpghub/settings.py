@@ -30,7 +30,7 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['ttrpg-hub-84db70afcadd.herokuapp.com', '127.0.0.1']
 
@@ -47,11 +47,11 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
-    'cloudinary_storage',
     'django.contrib.staticfiles',
-    'taggit',
+    'cloudinary_storage',
     'cloudinary',
     'django_summernote',
+    'taggit',
     'crispy_forms',
     'crispy_bootstrap5',
     'blog',

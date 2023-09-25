@@ -1,0 +1,74 @@
+.masthead {
+  background: url("/static/images/rpg-hero.jpg");
+  background-size: cover;
+  color: #fff;
+}
+
+.image-container {
+    position: relative;
+    object-fit: cover;
+}
+
+
+.card-img-top {
+    height: 45vh;
+    width: 30vw;
+}
+
+/* Login form from dvrrajashekhar */
+.btn-color{
+    background-color: #0e1c36;
+    color: #fff;
+    
+  }
+  
+  .profile-image-pic{
+    height: 200px;
+    width: 200px;
+    object-fit: cover;
+  }
+  
+  
+  
+  .cardbody-color{
+    background-color: #ebf2fa;
+  }
+
+
+/* Like button */
+.btn-like {
+  color: #e81e10;
+  border: none;
+  background: transparent;
+}
+
+.btn-like:hover,
+.btn-like:active {
+  color: #e81e10;
+  background: transparent;
+  border: none;
+}
+/* Edit and Delete comment buttons*/
+.update-btn {
+  color: #fff;
+}
+a {
+  text-decoration: none;
+}
+/* Tag button */
+.tag-link {
+  margin-right: 10px;
+}
+
+/* Tag Background and header */
+.tag-bg {
+  background-color: #ebf2fa;
+  margin: auto;
+  width: 75%;
+}
+.tag-header {
+  font-weight: bolder;
+}
+.text-underline-hover:hover {
+  text-decoration: underline;
+}
