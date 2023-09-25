@@ -216,5 +216,8 @@ All testing and validation information can be found [here](#).
 - My knowledge on how to use django-taggit was gained through the [BugBytes](https://www.youtube.com/watch?v=213swbH8j_o&ab_channel=BugBytes) Youtube channel.
 - Flaticon and hero image were taken from [Freepik](https://www.freepik.com/)
 - My login/logout form templates were taken from dvrrajashekhar on [freefrontend](https://freefrontend.com/bootstrap-login-forms/#gsc.tab=0)
+- Stackoverflow was of huge help at multiple points during the project.
+- [Starbootstrap](https://startbootstrap.com/theme/clean-blog) was very helpful in styling my website. I used a couple templates from that website and adapted them to suit my site.
+- Code Institue's I think therefore I blog project inspired my own blog website, which I customized to suit my needs.
 
 ---
