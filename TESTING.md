@@ -42,6 +42,22 @@ All css code passes validation
 
 ## Bugs
 
-**Bug 1**
+Bug 1
+
+- Problem: My custom css would not load on my website when hosted on heroku. It said the file was of the wrong type (MIME).
+- Solution: With consultation from my mentor I realized that this is a common problem with heroku. I installed the django-heroku library and after setting it up my css file worked with no issues.
+
+Bug 2
+
+- Problem: When I modified my vote and post model to include a user/author respectively the console informed me it needed some kind of placeholder for the objects already created based on the new model property.
+- Solution: I input the following perameters into the user variable. A almost identical solution to the below can be found in the Post model.
+![user in Vote model](static/images/user-vote-model.png)
+
+Bug 3
+
+- Problem: It appeared that my polls url was not using the template I had assigned to it. All that displayed on the front end was the base.html template with no content in the middle.
+- Solution: After adjusting the view.py, models.py, and urls.py files I realized I had simply forgotten to include the block content tag on my poll templates.
+
+
 
 ## Unfixed Bugs
