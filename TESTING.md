@@ -28,17 +28,20 @@ All python code written by me passes PEP8 standards using the [CI Python Linter]
 
 ### HTML W3C Validator
 
-All HTML code passed through the [W3C HTML validator](https://validator.w3.org/#validate_by_uri).
-![HTML validation](documentation/images/html-validation.png)
+All HTML code written by me passed through the [W3C HTML validator](https://validator.w3.org/#validate_by_uri).
+- An enormous amount of errors appears when a lot of formatting is applied to the blog post's content. 
+- The code that produces the errors is not written by me, but is what is produced by the {{post.content|safe}} tag.
+![HTML validation problem](documentation/my-code-post-content.png)
+![HTML validation problem](documentation/produced-content-code.png)
 
 ### Jigsaw CSS Validator
 
 All css code passes validation
-![CSS Validation](/documentation/images/css-validation.png)
+![CSS Validation](/documentation/css-validation.png)
 
 ### Lighthouse Validation
 
-![Lighthouse](documentation/images/lighthouse-validation.png)
+![Lighthouse](documentation/lighthouse-validation.png)
 
 ## Bugs
 
@@ -51,7 +54,7 @@ Bug 2
 
 - Problem: When I modified my vote and post model to include a user/author respectively the console informed me it needed some kind of placeholder for the objects already created based on the new model property.
 - Solution: I input the following perameters into the user variable. A almost identical solution to the below can be found in the Post model.
-![user in Vote model](documentation/images/user-vote-model.png)
+![user in Vote model](documentation/user-vote-model.png)
 
 Bug 3
 

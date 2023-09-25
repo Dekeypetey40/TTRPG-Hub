@@ -11,21 +11,21 @@
                 <!-- Post header-->
                 <header class="mb-4">
                     <!-- Post title-->
-                    <h1 class="fw-bolder mb-1">{{ post.title }}</h1>
+                    <h2 class="fw-bolder mb-1">{{ post.title }}</h2>
                     <!-- Post meta content-->
-                    <div class="text-muted fst-italic mb-2">{{ post.author }} | {{ post.created_on }}</p>
-                    <!-- Post tags-->
-                    {% for tag in post.tags.all %}
-                        <small>{{ tag }}</small>
-                    {% endfor %}
+                    <div class="text-muted fst-italic mb-2">
+                        <p>{{ post.author }} | {{ post.created_on }}</p>
+                    </div>
                 </header>
                 <!-- Preview image figure-->
                 {% if "placeholder" in post.featured_image.url %}
-                <figure class="mb-4"><img class="img-fluid rounded" src="https://scgovlibrary.librarymarket.com/sites/default/files/2020-12/dndmobile-br-1559158957902.jpg" 
-                alt="a default blog picture with a dragon" /></figure>
-                    {% else %}
-                    <figure class="mb-4"><img class="img-fluid rounded" src=" {{ post.featured_image.url }}" alt="uploaded blog picture" /></figure>
-                    {% endif %}
+                <figure class="mb-4"><img class="img-fluid rounded"
+                        src="https://scgovlibrary.librarymarket.com/sites/default/files/2020-12/dndmobile-br-1559158957902.jpg"
+                        alt="a default blog picture with a dragon" /></figure>
+                {% else %}
+                <figure class="mb-4"><img class="img-fluid rounded" src=" {{ post.featured_image.url }}"
+                        alt="uploaded blog picture" /></figure>
+                {% endif %}
                 <!-- Post content-->
                 <div class="row">
                     <div class="col card mb-4  mt-3 left top">
@@ -34,27 +34,29 @@
                                 {{ post.content | safe }}
                             </p>
                             <div class="row">
-            
+
                                 <div class="col-1">
-                                    <strong>
-                                        
-                                        {% if user.is_authenticated %}
-                                            <form action="{% url 'post_like' post.slug %}" method="POST" class="d-inline">
-                                                {% csrf_token %}
-                                                {% if liked %}
-                                                    <button class="btn-like" type="submit" name="blogpost_id" value="{{post.slug}}"><i class="fas fa-heart"></i></button>
-                                                {% else %}
-                                                    <button class="btn-like" type="submit" name="blogpost_id" value="{{post.slug}}"><i class="far fa-heart"></i></button>
-                                                {% endif %}
-                                                    
-                                            </form>
+
+
+                                    {% if user.is_authenticated %}
+                                    <form action="{% url 'post_like' post.slug %}" method="POST" class="d-inline">
+
+                                        {% csrf_token %}
+                                        {% if liked %}
+                                        <button class="btn-like" type="submit" name="blogpost_id"
+                                            value="{{post.slug}}"><i class="fas fa-heart"></i></button>
                                         {% else %}
-                                            <span class="text-secondary"><i class="far fa-heart"></i></span>
+                                        <button class="btn-like" type="submit" name="blogpost_id"
+                                            value="{{post.slug}}"><i class="far fa-heart"></i></button>
                                         {% endif %}
-                                        <span class="text-secondary">{{ post.number_of_likes }}</span>
-                                            
-                                    </strong>
-                                    
+
+                                    </form>
+                                    {% else %}
+                                    <span class="text-secondary"><i class="far fa-heart"></i></span>
+                                    {% endif %}
+                                    <span class="text-secondary">{{ post.number_of_likes }}</span>
+
+
                                 </div>
                             </div>
                         </div>
@@ -69,7 +71,7 @@
                             <div class="col-md-12 card mb-4 mt-3">
                                 <h3>Comments:</h3>
                                 <div class="card-body">
-                                    
+
                                     {% for comment in comments %}
                                     <div class="comments" style="padding: 10px;">
                                         <p class="font-weight-bold">
@@ -77,26 +79,28 @@
                                             <span class=" text-muted font-weight-normal">
                                                 {{ comment.created_on }}
                                             </span> wrote:
-                                            
+
                                         </p>
                                         {{ comment.body | linebreaks}}
                                     </div>
                                     <!-- Edit/Delete Comment icons -->
                                     {% if request.user == comment.user %}
-                                    <button type="button" class="btn btn-primary update-btn"><a class="text-white" href="{% url 'edit_comment' comment.id %}">Edit</a></button>
-                                    <button type="button" class="btn btn-danger update-btn"><a class="text-white" href="{% url 'delete_comment' comment.id %}">Delete</a></button>
+                                    <button type="button" class="btn btn-primary update-btn"><a class="text-white"
+                                            href="{% url 'edit_comment' comment.id %}">Edit</a></button>
+                                    <button type="button" class="btn btn-danger update-btn"><a class="text-white"
+                                            href="{% url 'delete_comment' comment.id %}">Delete</a></button>
                                     {% endif %}
                                     {% endfor %}
-                                        
+
                                 </div>
                             </div>
                         </div>
                         <!-- Comment form-->
-                        
+
                         {% if commented %}
-                            <div class="alert alert-success" role="alert">
-                                Your comment is awaiting approval...
-                            </div>
+                        <div class="alert alert-success" role="alert">
+                            Your comment is awaiting approval...
+                        </div>
                         {% else %}
                         {% if user.is_authenticated %}
 
@@ -119,6 +123,9 @@
                         <hr>
                     </div>
                 </div>
-                
+            </div>
+        </div>
+    </div>
+</div>
 
-{% endblock content %}
+    {% endblock content %}

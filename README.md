@@ -1,6 +1,6 @@
 # _TTRPG Hub_
 
-![Image of welcome screen](documentation/images/ttrpg-home-page.png)
+![Image of welcome screen](documentation/ttrpg-home-page.png)
 
 ---
 
@@ -23,7 +23,7 @@ TTRPG Hub is a blog website desogned to spark engagement and discussion amongst 
 ## Agile Planning
 
 An agile approach was used to plan and make this project. I made use of GitHub's issues and projects to manage my progress in the project, as well as user stories. A link to my kanban board can be found [here](https://github.com/users/Dekeypetey40/projects/3/views/1).
-![Kanban board](documentation/images/kanban-board.png)
+![Kanban board](documentation/kanban-board.png)
 
 ## User stories
 
@@ -60,13 +60,13 @@ I decided to stick with a basic color scheme. I used black for the navbar and fo
 ## Flow Chart and Wireframes
 
 Wireframe of the homepage
-![Homepage](documentation/images/homepage-wireframe.png)
+![Homepage](documentation/homepage-wireframe.png)
 Wireframe of a blog post
-![Blogpost](documentation/images/blogpost-wireframe.png)
+![Blogpost](documentation/blogpost-wireframe.png)
 
 ## Database Models
 
-![Database Models](documentation/images/db-models.png)
+![Database Models](documentation/db-models.png)
 
 # Features
 
@@ -75,10 +75,10 @@ Wireframe of a blog post
 - The bootstrap template had a responsive navbar that turns into a burger menu on smaller screens.
 - When you have not logged in it shows register and login options and a logout option when logged in.
 - The link that is active is lighter so the user knows where on the webpage they are.
-![Navbar logged in](documentation/images/navbar-logged-in.png)
-![Navbar logged out](documentation/images/navbar-logged-out.png)
-![Navbar small screen](documentation/images/navbar-small-screen.png)
-![Navbar extended menu](documentation/images/navbar-menu-extended.png)
+![Navbar logged in](documentation/navbar-logged-in.png)
+![Navbar logged out](documentation/navbar-logged-out.png)
+![Navbar small screen](documentation/navbar-small-screen.png)
+![Navbar extended menu](documentation/navbar-menu-extended.png)
 
 ## Homepage
 
@@ -88,41 +88,41 @@ Wireframe of a blog post
   - The read more button lets you read the whole blog post.
   - The tag buttons filters blog posts by tag.
 - You can see how many likes each blog post has.
-![Image of welcome screen](documentation/images/ttrpg-home-page.png)
+![Image of welcome screen](documentation/ttrpg-home-page.png)
 
 ## Reading a blog post
 
 - Here you can see what a blog post looks like when you click read more.
 - At the bottom, you can leave a comment, like the post, and read others' comments.
-![Blog post](documentation/images/whole-post-title.png)
-![Blog post text](documentation/images/whole-post-text.png)
+![Blog post](documentation/whole-post-title.png)
+![Blog post text](documentation/whole-post-text.png)
 
 ## Tags
 
 - You can see tags on each blog post, which give the user additional information as to what the post is about.
 - Users can click on the tags and get a filtered list of blog posts containing that tag.
-![Tags](documentation/images/tag-filter.png)
+![Tags](documentation/tag-filter.png)
 
 ## Polls
 
 - Here you can look at the list of polls that you can vote on.
 - One can only vote once on each poll.
 - Once you vote you get to see a piechart with the results of the poll.
-![List of polls](documentation/images/list-of-polls.png)
-![Poll Results](documentation/images/poll-voted.png)
-![Multiple Vote Attempts](documentation/images/poll-voted-again.png)
+![List of polls](documentation/list-of-polls.png)
+![Poll Results](documentation/poll-voted.png)
+![Multiple Vote Attempts](documentation/poll-voted-again.png)
 
 ## Account creation and logging in and out
 
 - There are messages letting the user know if they have successfully signed in or out.
 - If a user wants to logout the site asks them if they are sure. 
 - Username and password fields are required and prompt the user if they input invalid data. 
-![Invalid Username](documentation/images/invalid-username.png)
-![Password Required](documentation/images/password-required.png)
-![Login](documentation/images/login-form.png)
-![List of polls](documentation/images/logout-prompt.png)
-![List of polls](documentation/images/navbar-logged-in.png)
-![List of polls](documentation/images/navbar-logged-out.png)
+![Invalid Username](documentation/invalid-username.png)
+![Password Required](documentation/password-required.png)
+![Login](documentation/login-form.png)
+![List of polls](documentation/logout-prompt.png)
+![List of polls](documentation/navbar-logged-in.png)
+![List of polls](documentation/navbar-logged-out.png)
 
 ## Comment CRUD Functionality for Users
 
@@ -131,12 +131,12 @@ Wireframe of a blog post
 - If you are the user who made the comment the Edit and Delete buttons appear allowing you to modify the comment.
 - If you are not the user who made the comment and try to access the edit or delete urls you will be prevented from updating that comment.
 
-![comment approval](documentation/images/comment-awaiting-approval.png)
-![comment](documentation/images/crud-comments-user.png)
-![comment edit](documentation/images/edit-comment.png)
-![comment](documentation/images/edited-comment.png)
-![comment](documentation/images/confirm-delete.png)
-![comment](documentation/images/defensive-programming.png)
+![comment approval](documentation/comment-awaiting-approval.png)
+![comment](documentation/crud-comments-user.png)
+![comment edit](documentation/edit-comment.png)
+![comment](documentation/edited-comment.png)
+![comment](documentation/confirm-delete.png)
+![comment](documentation/defensive-programming.png)
 
 ---
 
