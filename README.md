@@ -138,6 +138,19 @@ Wireframe of a blog post
 ![comment](static/images/confirm-delete.png)
 ![comment](static/images/defensive-programming.png)
 
+## Django Administration
+
+- Only an account with staff status can access the admin panel.
+- One has full CRUD functionality for all data in the database.
+- Django summernote makes it easy to write blog posts. 
+![Admin Panel](static/images/admin-panel.png)
+![Admin Panel](static/images/admin-posts.png)
+![Admin Panel](static/images/create-post.png)
+![Admin Panel](static/images/delete-post.png)
+![Admin Panel](static/images/delete-post-confirm.png)
+![Admin Panel](static/images/confirmation-delete-post.png)
+
+
 ---
 
 # Future Features
