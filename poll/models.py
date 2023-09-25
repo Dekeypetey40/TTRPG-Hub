@@ -43,5 +43,6 @@ class Vote(models.Model):
                              related_name="votes",
                              null=True,
                              blank=True)
+
     def __str__(self):
         return f"{self.poll.name} - {self.option.name}"

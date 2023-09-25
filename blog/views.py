@@ -114,9 +114,9 @@ class DeleteComment(DeleteView):
     model = Comment
     template_name = "delete_comment.html"
     success_url = "/"
+
     def delete(self, request, *args, **kwargs):
         # the Post object
         self.object = self.get_object()
-        
         success_url = "/"
         return http.HttpResponseRedirect(success_url)

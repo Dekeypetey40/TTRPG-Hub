@@ -13,9 +13,9 @@ class Post(models.Model):
     slug = models.SlugField(max_length=200, unique=True)
     tags = TaggableManager()
     author = models.ForeignKey(User,
-                             on_delete=models.SET_NULL,
-                             null=True,
-                             blank=True)
+                               on_delete=models.SET_NULL,
+                               null=True,
+                               blank=True)
     updated_on = models.DateTimeField(auto_now=True)
     content = models.TextField()
     featured_image = CloudinaryField('image', default='placeholder')
