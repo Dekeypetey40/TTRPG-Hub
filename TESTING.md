@@ -93,6 +93,8 @@ All HTML code written by me passed through the [W3C HTML validator](https://vali
 - The code that produces the errors is not written by me, but is what is produced by the {{post.content|safe}} tag.
 ![HTML validation problem](documentation/my-code-post-content.png)
 ![HTML validation problem](documentation/produced-content-code.png)
+- All of the errors produce seen below are between my paragraph tags containing {{post.content|safe}}.
+![HTML validation errors](documentation/errors-html-validation.png)
 
 ### Jigsaw CSS Validator
 
