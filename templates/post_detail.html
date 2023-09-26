@@ -66,6 +66,10 @@
             <!-- Comments section-->
             <div class="mb-4 row">
                 <div class="col card bg-light mt-3 left top">
+                    
+                    {% if comments %}
+                        
+                        
                     <div class="card-body">
                         <div class="row">
                             <div class="col-md-12 card mb-4 mt-3">
@@ -95,6 +99,7 @@
                                 </div>
                             </div>
                         </div>
+                        {% endif %}
                         <!-- Comment form-->
 
                         {% if commented %}
