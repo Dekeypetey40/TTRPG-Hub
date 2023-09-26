@@ -5,6 +5,9 @@ from django.contrib.auth.models import User
 
 
 class PollOption(models.Model):
+    """
+    Model a poll option
+    """
     name = models.CharField(max_length=30)
 
     def __str__(self):
@@ -12,6 +15,9 @@ class PollOption(models.Model):
 
 
 class Poll(models.Model):
+    """
+    Model for a poll
+    """
     name = models.CharField(max_length=50)
     description = models.TextField()
     options = models.ManyToManyField(
@@ -20,13 +26,12 @@ class Poll(models.Model):
     def __str__(self):
         return self.name
 
-        """
-        Need a vote model so that when a poll uses the same option as
-        another that the votes get tallied properly.
-        """
-
 
 class Vote(models.Model):
+    """
+    Need a vote model so that when a poll uses the same option as
+    another that the votes get tallied properly.
+    """
     poll = models.ForeignKey(Poll,
                              on_delete=models.SET_NULL,
                              related_name="votes",

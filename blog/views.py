@@ -13,6 +13,7 @@ from .forms import CommentForm
 
 
 class PostList(ListView):
+    """Post List for the home page"""
     model = Post
     queryset = Post.objects.filter(status=1).order_by("-created_on")
     template_name = "index.html"
@@ -24,6 +25,8 @@ class PostList(ListView):
 
 
 class TagFilter(View):
+    """The view users see when they click on a tag button"""
+
     def get(self, request, slug, *args, **kwargs):
         tag = get_object_or_404(Tag, slug=slug)
         posts = Post.objects.filter(tags=tag)
@@ -35,6 +38,7 @@ class TagFilter(View):
 
 
 class PostDetail(View):
+    """The view for looking at a blog post"""
 
     def get(self, request, slug, *args, **kwargs):
         queryset = Post.objects.filter(status=1)
@@ -89,6 +93,7 @@ class PostDetail(View):
 
 
 class PostLike(View):
+    """Adding or removing likes on a post"""
 
     def post(self, request, slug):
         post = get_object_or_404(Post, slug=slug)

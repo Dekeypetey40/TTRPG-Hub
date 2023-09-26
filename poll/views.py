@@ -12,6 +12,9 @@ from poll.models import Poll, PollOption, Vote
 
 
 class HomeView(View):
+    """
+    The view that shows the list of polls
+    """
 
     def get(self, request):
         polls = Poll.objects.all()
@@ -25,6 +28,9 @@ class HomeView(View):
 
 
 class PollView(View):
+    """
+    The view that shows a specific poll
+    """
 
     def get(self, request, poll_id):
         poll = Poll.objects.get(id=poll_id)
@@ -37,6 +43,9 @@ class PollView(View):
         )
 
     def post(self, request, poll_id):
+        """
+        Handles voting on polls
+        """
         poll = Poll.objects.get(id=poll_id)
         if request.user.is_authenticated:
             requestData = request.POST
