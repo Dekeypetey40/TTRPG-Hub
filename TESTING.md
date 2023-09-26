@@ -64,9 +64,15 @@
 
 ## Responsive Design
 
-### Below is now the screen at the size of a Medium Screen iPad Air
+### Homepage and Blog Post
 
+![Mobile Homepage](documentation/homepage-mobile.png)
+![Mobile Blog Post](documentation/blog-post-mobile.png)
 
+### Polls
+
+![Mobile poll list](documentation/mobile-polls-list.png)
+![Mobile poll](documentation/mobile-poll.png)
 
 ## Validation
 
