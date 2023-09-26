@@ -39,9 +39,7 @@ class PollView(View):
     def post(self, request, poll_id):
         poll = Poll.objects.get(id=poll_id)
         if request.user.is_authenticated:
-            
             requestData = request.POST
-
             option_id = requestData.get('option_id')
 
             option = PollOption.objects.get(id=option_id)
@@ -53,7 +51,8 @@ class PollView(View):
                 )
                 poll_results = []
                 for option in poll.options.all():
-                    voteCount = Vote.objects.filter(poll=poll, option=option).count()
+                    voteCount = Vote.objects.filter(poll=poll,
+                                                    option=option).count()
                     poll_results.append([option.name, voteCount])
 
                 return render(
@@ -68,7 +67,8 @@ class PollView(View):
             else:
                 poll_results = []
                 for option in poll.options.all():
-                    voteCount = Vote.objects.filter(poll=poll, option=option).count()
+                    voteCount = Vote.objects.filter(poll=poll,
+                                                    option=option).count()
                     poll_results.append([option.name, voteCount])
                 return render(
                     request,
@@ -81,4 +81,4 @@ class PollView(View):
                 )
         else:
             messages.warning(self.request, "You must be logged in to vote")
-            return redirect(reverse('poll:poll', kwargs={'poll_id':poll.id}))
+            return redirect(reverse('poll:poll', kwargs={'poll_id': poll.id}))
