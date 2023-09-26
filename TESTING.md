@@ -74,6 +74,12 @@
 ![Mobile poll list](documentation/mobile-polls-list.png)
 ![Mobile poll](documentation/mobile-poll.png)
 
+### Login, Logout, Register
+
+![Logout](documentation/loggout-mobile.png)
+![Login](documentation/sign-in-mobile.png)
+![Register](documentation/register-mobile.png)
+
 ## Validation
 
 ### PEP8 Compliant
