@@ -39,11 +39,11 @@
 
 
                                     {% if user.is_authenticated %}
-                                    <form action="{% url 'post_like' post.slug %}" method="POST" class="d-inline">
+                                    <form action="{% url 'post_like' post.slug %}" method="POST">
 
                                         {% csrf_token %}
-                                        {% if liked %}
-                                        <button class="btn-like" type="submit" name="blogpost_id"
+                                        {% if favorites %}
+                                        <button class="btn-like" type="submit" name=""
                                             value="{{post.slug}}"><i class="fas fa-heart"></i></button>
                                         {% else %}
                                         <button class="btn-like" type="submit" name="blogpost_id"
