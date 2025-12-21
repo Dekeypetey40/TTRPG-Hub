@@ -26,10 +26,8 @@ class PostList(ListView):
 
         liked_post_ids = set()
         if self.request.user.is_authenticated:
-            # uses the auto-created through table columns post_id and user_id
             liked_post_ids = set(
-                Post.likes.through.objects.filter(user_id=self.request.user.id)
-                .values_list("post_id", flat=True)
+                Post.objects.filter(likes=self.request.user).values_list("id", flat=True)
             )
 
         context["liked_post_ids"] = liked_post_ids
