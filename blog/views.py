@@ -18,21 +18,8 @@ class PostList(ListView):
     queryset = Post.objects.filter(status=1).order_by("-created_on")
     template_name = "index.html"
     paginate_by = 3
-
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-
-        # Needed by index.html top tag loop
-        context["tags"] = Tag.objects.all()
-
-        liked_post_ids = set()
-        if self.request.user.is_authenticated:
-            liked_post_ids = set(
-                Post.objects.filter(likes=self.request.user).values_list("id", flat=True)
-            )
-
-        context["liked_post_ids"] = liked_post_ids
-        return context
+    posts = Post.objects.prefetch_related('tags').all()
+    tags = Tag.objects.all()
 
 # Ability to filter blog posts by tag
 
