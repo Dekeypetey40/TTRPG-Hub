@@ -5,55 +5,78 @@
 }
 
 .image-container {
-    position: relative;
-    object-fit: cover;
+  position: relative;
+  object-fit: cover;
 }
 
-
 .card-img-top {
-    height: 45vh;
+  height: 45vh;
 }
 
 /* Login form from dvrrajashekhar */
-.btn-color{
-    background-color: #0e1c36;
-    color: #fff;
-    
-  }
-  
-  .profile-image-pic{
-    height: 200px;
-    width: 200px;
-    object-fit: cover;
-  }
-  
-  
-  
-  .cardbody-color{
-    background-color: #ebf2fa;
-  }
+.btn-color {
+  background-color: #0e1c36;
+  color: #fff;
+}
 
+.profile-image-pic {
+  height: 200px;
+  width: 200px;
+  object-fit: cover;
+}
+
+.cardbody-color {
+  background-color: #ebf2fa;
+}
 
 /* Like button */
 .btn-like {
   color: #e81e10;
   border: none;
   background: transparent;
+
+  /* Ensure the button doesn't add extra height/spacing */
+  padding: 0;
+  line-height: 1;
 }
 
 .btn-like:hover,
-.btn-like:active {
+.btn-like:active,
+.btn-like:focus {
   color: #e81e10;
   background: transparent;
   border: none;
 }
+
+.btn-like:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+/* Like row alignment */
+.like-row {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.like-form {
+  margin: 0;
+}
+
+.like-count {
+  line-height: 1;
+}
+
 /* Edit and Delete comment buttons*/
 .update-btn {
   color: #fff;
 }
+
 a {
   text-decoration: none;
 }
+
 /* Tag button */
 .tag-link {
   margin-right: 10px;
@@ -65,14 +88,17 @@ a {
   margin: auto;
   width: 75%;
 }
+
 .tag-header {
   font-weight: bolder;
 }
+
 .text-underline-hover:hover {
   text-decoration: underline;
 }
+
 /* Pie Chart */
 .chart {
-  width: 100%; 
+  width: 100%;
   min-height: 450px;
 }
