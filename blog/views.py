@@ -18,11 +18,12 @@ class PostList(ListView):
     queryset = Post.objects.filter(status=1).order_by("-created_on")
     template_name = "index.html"
     paginate_by = 3
-    posts = Post.objects.prefetch_related('tags').all()
-    tags = Tag.objects.all()
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
+
+        # Needed by index.html top tag loop
+        context["tags"] = Tag.objects.all()
 
         liked_post_ids = set()
         if self.request.user.is_authenticated:
