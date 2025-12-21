@@ -38,10 +38,10 @@
               <p class="card-text">{{ post.content | safe }}</p>
               <div class="row">
                 <div class="col-auto">
-                  <div class="like-row">
+                  <div class="d-inline-flex align-items-center gap-2">
                     {% if user.is_authenticated %}
                     <form
-                      class="like-form"
+                      class="like-form d-inline-flex m-0"
                       action="{% url 'post_like' post.slug %}"
                       method="POST"
                     >
@@ -61,12 +61,11 @@
                       </button>
                     </form>
                     {% else %}
-                    <span class="like-icon text-secondary" aria-hidden="true"
+                    <span class="text-secondary"
                       ><i class="far fa-heart"></i
                     ></span>
                     {% endif %}
-
-                    <span class="like-count text-secondary"
+                    <span class="text-secondary"
                       >{{ post.number_of_likes }}</span
                     >
                   </div>

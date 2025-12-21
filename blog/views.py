@@ -21,6 +21,20 @@ class PostList(ListView):
     posts = Post.objects.prefetch_related('tags').all()
     tags = Tag.objects.all()
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+
+        liked_post_ids = set()
+        if self.request.user.is_authenticated:
+            # uses the auto-created through table columns post_id and user_id
+            liked_post_ids = set(
+                Post.likes.through.objects.filter(user_id=self.request.user.id)
+                .values_list("post_id", flat=True)
+            )
+
+        context["liked_post_ids"] = liked_post_ids
+        return context
+
 # Ability to filter blog posts by tag
 
 
