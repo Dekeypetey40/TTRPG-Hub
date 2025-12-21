@@ -55,13 +55,14 @@
 
 /* Like row alignment */
 .like-row {
-  display: inline-flex;
+  display: flex;
   align-items: center;
   gap: 0.5rem;
 }
 
 .like-form {
   margin: 0;
+  display: inline-flex;
 }
 
 .like-count {
