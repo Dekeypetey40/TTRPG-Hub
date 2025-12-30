@@ -18,12 +18,12 @@
                     <div class="card mb-4">
                         <div class="card-body">
                             <div class="image-container">
-                                {% if "placeholder" in post.featured_image.url %}
+                                {% if post.featured_image and post.featured_image.url and "placeholder" not in post.featured_image.url %}
+                                <img class="card-img-top" src="{{ post.featured_image.url }}" alt="picture">
+                                {% else %}
                                 <img class="card-img-top" 
                                     src="https://scgovlibrary.librarymarket.com/sites/default/files/2020-12/dndmobile-br-1559158957902.jpg" 
                                     alt="a default blog picture with a dragon">
-                                {% else %}
-                                <img class="card-img-top" src=" {{ post.featured_image.url }}" alt="picture">
                                 {% endif %}
                                 
                             </div>
@@ -39,11 +39,27 @@
                                     Author: {{ post.author }}
                                 </p>
                             </div>
-                            <p class="card-text">{{ post.excerpt }}</p>
+                            <p class="card-text">{{ post.excerpt|striptags|truncatewords:30 }}</p>
                             <div class="small text-muted">{{ post.created_on}}</div>
                             <a class="btn btn-primary" href="{% url 'post_detail' post.slug %}">Read more →</a>
                             <hr>
-                            <i class="far fa-heart btn-like"></i> {{ post.number_of_likes }}
+                            <div class="d-inline-flex align-items-center gap-2">
+                                {% if user.is_authenticated %}
+                                <form class="like-form d-inline-flex m-0" action="{% url 'post_like' post.slug %}" method="POST">
+                                    {% csrf_token %}
+                                    <button class="btn-like" type="submit" name="blogpost_id" value="{{ post.slug }}" aria-label="Like post">
+                                        {% if post.id in liked_posts %}
+                                        <i class="fas fa-heart"></i>
+                                        {% else %}
+                                        <i class="far fa-heart"></i>
+                                        {% endif %}
+                                    </button>
+                                </form>
+                                {% else %}
+                                <span class="text-secondary"><i class="far fa-heart"></i></span>
+                                {% endif %}
+                                <span class="text-secondary like-count">{{ post.number_of_likes }}</span>
+                            </div>
                         </div>
                     </div>
                 </div>

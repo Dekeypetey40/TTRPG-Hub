@@ -14,20 +14,20 @@
           </div>
         </header>
         <!-- Preview image figure-->
-        {% if "placeholder" in post.featured_image.url %}
+        {% if post.featured_image and post.featured_image.url and "placeholder" not in post.featured_image.url %}
         <figure class="mb-4">
           <img
             class="img-fluid rounded"
-            src="https://scgovlibrary.librarymarket.com/sites/default/files/2020-12/dndmobile-br-1559158957902.jpg"
-            alt="a default blog picture with a dragon"
+            src="{{ post.featured_image.url }}"
+            alt="uploaded blog picture"
           />
         </figure>
         {% else %}
         <figure class="mb-4">
           <img
             class="img-fluid rounded"
-            src=" {{ post.featured_image.url }}"
-            alt="uploaded blog picture"
+            src="https://scgovlibrary.librarymarket.com/sites/default/files/2020-12/dndmobile-br-1559158957902.jpg"
+            alt="a default blog picture with a dragon"
           />
         </figure>
         {% endif %}
@@ -65,7 +65,7 @@
                       ><i class="far fa-heart"></i
                     ></span>
                     {% endif %}
-                    <span class="text-secondary"
+                    <span class="text-secondary like-count"
                       >{{ post.number_of_likes }}</span
                     >
                   </div>
