@@ -2,33 +2,148 @@
 
 {% load i18n %}
 {% load account socialaccount %}
+{% load crispy_forms_tags %}
 
 {% block head_title %}{% trans "Sign Up" %}{% endblock %}
 
 {% block content %}
-
-<div class="container">
-  <div class="row">
-    <div class="col-md-6 offset-md-3">
-
-      <h1 class="text-center text-dark mt-2">{% trans 'Sign Up' %}</h1>
-      <div class="card my-5">
-        <form class="card-body cardbody-color p-lg-5" method="POST" action="{% url 'account_signup' %}">
-          <p>{% blocktrans %}Already have an account? Then please <a href="{{ login_url }}">sign
-              in</a>.{% endblocktrans %}</p>
-          {% csrf_token %}
-          {{ form.as_p }}
-          {% if redirect_field_value %}
-          <div class="mb-3">
-            <input type="hidden" class="form-control px-5 mt-5 w-100" name="{{ redirect_field_name }}"
-              value="{{ redirect_field_value }}" />
-            {% endif %}
-            <div class="text-center"><button type="submit" class="btn btn-color px-5 mt-5 w-100">{% trans 'Sign Up' %}
-                &raquo;</button>
+<div class="auth-page">
+  <div class="container">
+    <div class="row justify-content-center min-vh-100 align-items-center py-5">
+      <div class="col-12 col-md-8 col-lg-5">
+        
+        <!-- Auth Card -->
+        <div class="auth-card">
+          
+          <!-- Header -->
+          <div class="auth-header text-center mb-4">
+            <div class="auth-icon mb-3">
+              <i class="fa-solid fa-dragon fa-3x text-primary"></i>
             </div>
-          </form>
+            <h1 class="h3 mb-2 fw-bold">Create Your Account</h1>
+            <p class="text-muted mb-0">Join the TTRPG Hub community</p>
           </div>
+
+          <!-- Signup Form -->
+          <form method="POST" action="{% url 'account_signup' %}" id="signup-form" novalidate>
+            {% csrf_token %}
+            
+            <!-- Username Field -->
+            <div class="mb-3">
+              <label for="id_username" class="form-label">
+                <i class="fa-solid fa-user text-muted me-1"></i>
+                Username
+              </label>
+              <div class="input-group">
+                <span class="input-group-text">
+                  <i class="fa-solid fa-user"></i>
+                </span>
+                {{ form.username }}
+              </div>
+              {% if form.username.errors %}
+                <div class="invalid-feedback d-block">
+                  {{ form.username.errors }}
+                </div>
+              {% endif %}
+              <small class="form-text text-muted">Choose a unique username (letters, numbers, and @/./+/-/_ only)</small>
+            </div>
+
+            <!-- Email Field -->
+            <div class="mb-3">
+              <label for="id_email" class="form-label">
+                <i class="fa-solid fa-envelope text-muted me-1"></i>
+                Email <span class="text-muted">(optional)</span>
+              </label>
+              <div class="input-group">
+                <span class="input-group-text">
+                  <i class="fa-solid fa-envelope"></i>
+                </span>
+                {{ form.email }}
+              </div>
+              {% if form.email.errors %}
+                <div class="invalid-feedback d-block">
+                  {{ form.email.errors }}
+                </div>
+              {% endif %}
+            </div>
+
+            <!-- Password Field -->
+            <div class="mb-3">
+              <label for="id_password1" class="form-label">
+                <i class="fa-solid fa-lock text-muted me-1"></i>
+                Password
+              </label>
+              <div class="input-group">
+                <span class="input-group-text">
+                  <i class="fa-solid fa-lock"></i>
+                </span>
+                {{ form.password1 }}
+                <button class="btn btn-outline-secondary password-toggle" type="button" data-target="id_password1">
+                  <i class="fa-solid fa-eye"></i>
+                </button>
+              </div>
+              {% if form.password1.errors %}
+                <div class="invalid-feedback d-block">
+                  {{ form.password1.errors }}
+                </div>
+              {% endif %}
+              <div id="password-strength" class="mt-2"></div>
+            </div>
+
+            <!-- Password Confirmation Field -->
+            <div class="mb-4">
+              <label for="id_password2" class="form-label">
+                <i class="fa-solid fa-lock text-muted me-1"></i>
+                Confirm Password
+              </label>
+              <div class="input-group">
+                <span class="input-group-text">
+                  <i class="fa-solid fa-lock"></i>
+                </span>
+                {{ form.password2 }}
+                <button class="btn btn-outline-secondary password-toggle" type="button" data-target="id_password2">
+                  <i class="fa-solid fa-eye"></i>
+                </button>
+              </div>
+              {% if form.password2.errors %}
+                <div class="invalid-feedback d-block">
+                  {{ form.password2.errors }}
+                </div>
+              {% endif %}
+            </div>
+
+            <!-- Hidden Redirect Field -->
+            {% if redirect_field_value %}
+            <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+            {% endif %}
+
+            <!-- Submit Button -->
+            <button type="submit" class="btn btn-auth w-100 mb-3">
+              <span class="btn-text">Create Account</span>
+              <span class="btn-spinner d-none">
+                <span class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>
+                Creating account...
+              </span>
+            </button>
+
+            <!-- Divider -->
+            <div class="auth-divider">
+              <span>Already have an account?</span>
+            </div>
+
+            <!-- Sign In Link -->
+            <div class="text-center">
+              <a href="{{ login_url }}" class="btn btn-outline-secondary w-100">
+                Sign In
+              </a>
+            </div>
+
+          </form>
+
+        </div>
+
       </div>
     </div>
   </div>
+</div>
 {% endblock %}
