@@ -3,7 +3,7 @@ from taggit.models import Tag
 from django.views.generic import ListView, View
 from django.views.generic.edit import UpdateView, DeleteView
 from django.contrib.auth.models import User
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect, JsonResponse
 from django.contrib import messages
 from .models import Post, Comment
 from django import http
@@ -21,6 +21,18 @@ class PostList(ListView):
     posts = Post.objects.prefetch_related('tags').all()
     tags = Tag.objects.all()
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        # Add liked status for each post if user is authenticated
+        if self.request.user.is_authenticated:
+            liked_posts = set(
+                Post.objects.filter(likes=self.request.user).values_list('id', flat=True)
+            )
+            context['liked_posts'] = liked_posts
+        else:
+            context['liked_posts'] = set()
+        return context
+
 # Ability to filter blog posts by tag
 
 
@@ -30,9 +42,19 @@ class TagFilter(View):
     def get(self, request, slug, *args, **kwargs):
         tag = get_object_or_404(Tag, slug=slug)
         posts = Post.objects.filter(tags=tag)
+        
+        # Add liked status for each post if user is authenticated
+        if request.user.is_authenticated:
+            liked_posts = set(
+                Post.objects.filter(likes=request.user).values_list('id', flat=True)
+            )
+        else:
+            liked_posts = set()
+        
         context = {
             'tag': tag,
             'posts': posts,
+            'liked_posts': liked_posts,
         }
         return render(request, 'tag_filter.html', context)
 
@@ -101,14 +123,31 @@ class PostLike(View):
     """Adding or removing likes on a post"""
 
     def post(self, request, slug):
+        # Check if user is authenticated
+        if not request.user.is_authenticated:
+            if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
+                return JsonResponse({'error': 'Authentication required'}, status=401)
+            return HttpResponseRedirect(reverse('account_login'))
+
         post = get_object_or_404(Post, slug=slug)
 
+        # Check if user has already liked the post
         if post.likes.filter(id=request.user.id).exists():
             post.likes.remove(request.user)
+            liked = False
         else:
             post.likes.add(request.user)
+            liked = True
 
-        return HttpResponseRedirect(reverse('post_detail', args=[slug]))
+        # If AJAX request, return JSON response
+        if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
+            return JsonResponse({
+                'liked': liked,
+                'likes_count': post.number_of_likes()
+            })
+
+        # Otherwise, redirect back to the page the user came from (fallback)
+        return HttpResponseRedirect(request.META.get('HTTP_REFERER', reverse('home')))
 
 
 class EditComment(UpdateView):
